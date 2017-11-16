@@ -6,18 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>Tag: hello | yws博客</title>
+  <title>数据结构(一)   树(一) | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对过去的行为说声抱歉">
-<meta name="keywords" content="Java&#x2F;python&#x2F;Android&#x2F;渴望成长...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yws博客">
-<meta property="og:url" content="https://yws.fun/tags/hello/index.html">
+  <meta name="description" content="一、基本术语1.节点的度(Degree)：节点的子树个数。 2.树的度：树的所有节点中最大的度数。 3.叶节点(Leaf)：度为0的节点。">
+<meta name="keywords" content="树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构(一)   树(一)">
+<meta property="og:url" content="https://yws.fun/2017/11/16/structure1/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="对过去的行为说声抱歉">
+<meta property="og:description" content="一、基本术语1.节点的度(Degree)：节点的子树个数。 2.树的度：树的所有节点中最大的度数。 3.叶节点(Leaf)：度为0的节点。">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg1">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg2.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg3.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg4.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg5.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg6.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg7.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg8.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg9.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg11.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg12.jpg">
+<meta property="og:updated_time" content="2017-11-16T03:34:57.777Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yws博客">
-<meta name="twitter:description" content="对过去的行为说声抱歉">
+<meta name="twitter:title" content="数据结构(一)   树(一)">
+<meta name="twitter:description" content="一、基本术语1.节点的度(Degree)：节点的子树个数。 2.树的度：树的所有节点中最大的度数。 3.叶节点(Leaf)：度为0的节点。">
+<meta name="twitter:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg1">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -163,71 +176,247 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-structure1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/04/first/" class="archive-article-date">
-  	<time datetime="2017-11-04T08:02:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/04/first/">hello world</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构(一)   树(一)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/11/16/structure1/" class="archive-article-date">
+  	<time datetime="2017-11-16T00:14:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、基本术语"><a href="#一、基本术语" class="headerlink" title="一、基本术语"></a>一、基本术语</h2><p>1.节点的度(Degree)：节点的子树个数。</p>
+<p>2.树的度：树的所有节点中最大的度数。</p>
+<p>3.叶节点(Leaf)：度为0的节点。<br><a id="more"></a><br>4.路径长度：边的个路径所包含的边的个数。</p>
+<p>5.节点的层次：根节点在第一层，其余层数依次+1。</p>
+<p>6.树的深度：树中所有节点中的最大层次是这棵树的深度。</p>
+<h2 id="二、树的表示"><a href="#二、树的表示" class="headerlink" title="二、树的表示"></a>二、树的表示</h2><h3 id="1-儿子-兄弟表示法"><a href="#1-儿子-兄弟表示法" class="headerlink" title="1.儿子-兄弟表示法"></a>1.儿子-兄弟表示法</h3><p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg1" alt="儿子-兄弟表示法" title="imag1"></p>
+<h3 id="2-二叉树-左右之分"><a href="#2-二叉树-左右之分" class="headerlink" title="2.二叉树(左右之分)"></a>2.二叉树(左右之分)</h3><p>每个节点最多有2个儿子，每个树的节点最多为两个</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg2.jpg" alt="strImg2" title="二叉树"></p>
+<h4 id="a-二叉树的5种形式"><a href="#a-二叉树的5种形式" class="headerlink" title="a.二叉树的5种形式"></a>a.二叉树的5种形式</h4><p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg3.jpg" alt="strImg3" title="二叉树五种形态"></p>
+<h4 id="b-特殊的二叉树"><a href="#b-特殊的二叉树" class="headerlink" title="b.特殊的二叉树"></a>b.特殊的二叉树</h4><p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg4.jpg" alt="strImg3" title="特殊二叉树"></p>
+<h4 id="c-二叉树的重要性质"><a href="#c-二叉树的重要性质" class="headerlink" title="c.二叉树的重要性质"></a>c.二叉树的重要性质</h4><p>1.一个二叉树第i层的最大节点数为：2^(i-1,平方次)，i &gt;= 1；</p>
+<p>2.深度为k的二叉树有最大的节点总数为：2（^k，平方次）- 1，k &gt;= 1；</p>
+<p>3.对任何非空的二叉树T，若n0表示叶节点的个数、n2是度为2的非叶节点个数，则n0 = n2 + 1;</p>
+<p>证明：总边的个数：n0+n1+n2+…-1（n为节点）= 0<em>n0 + 1 </em> n1 + 2 * n2+…；</p>
+<h4 id="d-二叉树的操作集"><a href="#d-二叉树的操作集" class="headerlink" title="d.二叉树的操作集"></a>d.二叉树的操作集</h4><p>1.判断是否为空；</p>
+<p>2.遍历；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;以根节点为基准，先序、中序、后序、层次遍历；</p>
+<p>3.创建；</p>
+<h4 id="e-二叉树的存储结构"><a href="#e-二叉树的存储结构" class="headerlink" title="e.二叉树的存储结构"></a>e.二叉树的存储结构</h4><p>1.顺序存储</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;完全二叉树</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg5.jpg" alt="strImg5" title="完全二叉树数组的形式表现"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;一般二叉树用数组存储，会造成空间浪费,不建议；</p>
+<p>2.链表存储</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg6.jpg" alt="strImg6" title="二叉树链表存储"></p>
+<p>3.二叉树的遍历</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;先序遍历：先访问根节点，先序遍历其左子树，再先序遍历其右子树；</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg7.jpg" alt="strImg7" title="二叉树遍历"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;中序遍历：先中序遍历其左子树，再访问跟节点，再中序遍历其右子树；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;后序遍历：后序遍历其左子树，再后序遍历其右子树，访问根节点；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;例：先序遍历上图得到：A-B-D-F-E-C-G-H-I;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;例：中序遍历上图得到：D-B-E-F-A-G-H-C-I;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;例：后序遍历上图得到：D-E-F-B-H-G-I-C-A;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;例：层次遍历上图得到：A-B-C-D-E-F-G-I-H;</p>
+<h4 id="f-二叉树的非递归遍历-利用堆栈"><a href="#f-二叉树的非递归遍历-利用堆栈" class="headerlink" title="f.二叉树的非递归遍历(利用堆栈)"></a>f.二叉树的非递归遍历(利用堆栈)</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;例子中序遍历:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1.遇到一个结点，就把它压栈，去遍历左子树；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.当左子树遍历结束之后，从栈顶弹出这个结点，并且访问它；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3.然后按照其右指针再去中序遍历该结点的右子数；</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg8.jpg" alt="strImg9" title="利用堆栈循环中序遍历二叉树"></p>
+<h4 id="g-二叉树层次遍历"><a href="#g-二叉树层次遍历" class="headerlink" title="g.二叉树层次遍历"></a>g.二叉树层次遍历</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 二叉树遍历的核心问题：把二维结构线性化，需要一个存储结构保存暂时不访问的节点；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; 存储结构：堆栈、队列；</p>
+<p>1.队列实现<br>&nbsp;&nbsp;&nbsp;&nbsp;从根节点开始，首先将根节点入队，然后开始执行循环，结点出队、访问该结点、其左右儿子入队；</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg9.jpg" alt="strImg9" title="队列层序遍历二叉树"></p>
+<h4 id="h-二叉树的应用"><a href="#h-二叉树的应用" class="headerlink" title="h.二叉树的应用"></a>h.二叉树的应用</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;1.输出二叉树中的叶子结点；<br>&nbsp;&nbsp;&nbsp;&nbsp;前序遍历，加上判断条件-&gt;如果没有子结点，则打印输出</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.求二叉树的高度；</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg11.jpg" alt="strImg11" title="求二叉树的高度"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3.二元运算表达式树及其遍历</p>
+<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg12.jpg" alt="strImg12" title="二元运算二叉树遍历"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;4.确定中序遍历，再已知任意一个遍历即可确定二叉树；    </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hello</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/初次//" class="article-tag-list-link color3">初次</a>
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://yws.fun/2017/11/16/structure1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/11/13/encoding/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">解决ubuntu16.04下sublime text3不能输入中文的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://yws.fun/2017/11/16/structure1/", 
+    sourceId: "structure1",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+  <div id="SOHUCS" sid="structure1" ></div> 
+<script type="text/javascript"> 
+window.YiliaChangyanWrap = function() {
+    var appid = "true"; 
+    var conf = "true"; 
+    var width = window.innerWidth || document.documentElement.clientWidth; 
+    if (width < 960) { 
+    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); }
+}
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -250,9 +439,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
