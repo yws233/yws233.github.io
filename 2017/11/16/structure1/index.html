@@ -15,8 +15,8 @@
 <meta property="og:url" content="https://yws.fun/2017/11/16/structure1/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="一、基本术语1.节点的度(Degree)：节点的子树个数。 2.树的度：树的所有节点中最大的度数。 3.叶节点(Leaf)：度为0的节点。">
-<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg1">
-<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg2.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/strImg1.jpg">
+<meta property="og:image" content="https://yws.fun/2017/11/16/structure1/strImg2.jpg">
 <meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg3.jpg">
 <meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg4.jpg">
 <meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg5.jpg">
@@ -26,11 +26,11 @@
 <meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg9.jpg">
 <meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg11.jpg">
 <meta property="og:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg12.jpg">
-<meta property="og:updated_time" content="2017-11-16T03:34:57.777Z">
+<meta property="og:updated_time" content="2017-11-16T03:42:15.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构(一)   树(一)">
 <meta name="twitter:description" content="一、基本术语1.节点的度(Degree)：节点的子树个数。 2.树的度：树的所有节点中最大的度数。 3.叶节点(Leaf)：度为0的节点。">
-<meta name="twitter:image" content="https://yws.fun/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg1">
+<meta name="twitter:image" content="https://yws.fun/2017/11/16/structure1/strImg1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -201,9 +201,9 @@
 <p>3.叶节点(Leaf)：度为0的节点。<br><a id="more"></a><br>4.路径长度：边的个路径所包含的边的个数。</p>
 <p>5.节点的层次：根节点在第一层，其余层数依次+1。</p>
 <p>6.树的深度：树中所有节点中的最大层次是这棵树的深度。</p>
-<h2 id="二、树的表示"><a href="#二、树的表示" class="headerlink" title="二、树的表示"></a>二、树的表示</h2><h3 id="1-儿子-兄弟表示法"><a href="#1-儿子-兄弟表示法" class="headerlink" title="1.儿子-兄弟表示法"></a>1.儿子-兄弟表示法</h3><p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg1" alt="儿子-兄弟表示法" title="imag1"></p>
+<h2 id="二、树的表示"><a href="#二、树的表示" class="headerlink" title="二、树的表示"></a>二、树的表示</h2><h3 id="1-儿子-兄弟表示法"><a href="#1-儿子-兄弟表示法" class="headerlink" title="1.儿子-兄弟表示法"></a>1.儿子-兄弟表示法</h3><p><img src="/2017/11/16/structure1/strImg1.jpg" alt="儿子-兄弟表示法" title="imag1"></p>
 <h3 id="2-二叉树-左右之分"><a href="#2-二叉树-左右之分" class="headerlink" title="2.二叉树(左右之分)"></a>2.二叉树(左右之分)</h3><p>每个节点最多有2个儿子，每个树的节点最多为两个</p>
-<p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg2.jpg" alt="strImg2" title="二叉树"></p>
+<p><img src="/2017/11/16/structure1/strImg2.jpg" alt="strImg2" title="二叉树"></p>
 <h4 id="a-二叉树的5种形式"><a href="#a-二叉树的5种形式" class="headerlink" title="a.二叉树的5种形式"></a>a.二叉树的5种形式</h4><p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg3.jpg" alt="strImg3" title="二叉树五种形态"></p>
 <h4 id="b-特殊的二叉树"><a href="#b-特殊的二叉树" class="headerlink" title="b.特殊的二叉树"></a>b.特殊的二叉树</h4><p><img src="/2017/11/16/structure1/home/yws/hexo/BLOG/source/_posts/structure1/strImg4.jpg" alt="strImg3" title="特殊二叉树"></p>
 <h4 id="c-二叉树的重要性质"><a href="#c-二叉树的重要性质" class="headerlink" title="c.二叉树的重要性质"></a>c.二叉树的重要性质</h4><p>1.一个二叉树第i层的最大节点数为：2^(i-1,平方次)，i &gt;= 1；</p>
@@ -509,15 +509,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">issue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hello</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">issue</a>
               </li>
              
               <li class="article-tag-list-item">
