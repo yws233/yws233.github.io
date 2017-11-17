@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://yws.fun">
   <title>数据结构(一) 树&lt;下&gt; | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；  a.堆的插入和删除">
+  <meta name="description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；">
 <meta name="keywords" content="树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构(一) 树&lt;下&gt;">
 <meta property="og:url" content="https://yws.fun/2017/11/17/structure3/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；  a.堆的插入和删除">
+<meta property="og:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；">
 <meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg1.png">
 <meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg2.png">
 <meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg3.png">
@@ -22,10 +22,10 @@
 <meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg6.png">
 <meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg7.png">
 <meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg8.png">
-<meta property="og:updated_time" content="2017-11-17T08:32:17.478Z">
+<meta property="og:updated_time" content="2017-11-17T08:40:30.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构(一) 树&lt;下&gt;">
-<meta name="twitter:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；  a.堆的插入和删除">
+<meta name="twitter:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；">
 <meta name="twitter:image" content="https://yws.fun/2017/11/17/structure3/strImg1.png">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
@@ -188,7 +188,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、堆"><a href="#一、堆" class="headerlink" title="一、堆"></a>一、堆</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；<br>&nbsp;&nbsp;&nbsp;&nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；</p>
+        <h2 id="一、堆"><a href="#一、堆" class="headerlink" title="一、堆"></a>一、堆</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；</p>
 <p><img src="/2017/11/17/structure3/strImg1.png" alt="strImg1" title="优先列队的二叉树表示"></p>
 <h4 id="a-堆的插入和删除"><a href="#a-堆的插入和删除" class="headerlink" title="a.堆的插入和删除"></a>a.堆的插入和删除</h4><p>1.插入：</p>
 <p>2.删除：例：最大堆删除，删除根结点，并用最后的叶子元素替换根结点原来的位置，观察替换后数据的有效性，然后与左右两个孩子进行比较，取出最大的，然后替换位置，一次比较，直到位置正确；</p>
@@ -465,11 +465,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hello</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计划书</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">issue</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,11 +481,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hello</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color1">issue</a>
               </li>
             
             <div class="clearfix"></div>
