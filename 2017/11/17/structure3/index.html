@@ -6,26 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>数据结构(二) 树 &lt;中&gt; | yws博客</title>
+  <title>数据结构(一) 树&lt;下&gt; | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、二叉搜索树(BST,Binary Search Tree)1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n； 2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；  a.堆的插入和删除">
+<meta name="keywords" content="树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构(二) 树 &lt;中&gt;">
-<meta property="og:url" content="https://yws.fun/2017/11/17/structure2/index.html">
+<meta property="og:title" content="数据结构(一) 树&lt;下&gt;">
+<meta property="og:url" content="https://yws.fun/2017/11/17/structure3/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="一、二叉搜索树(BST,Binary Search Tree)1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n； 2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg1">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg2.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg3.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg4.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg5.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg6.png">
-<meta property="og:updated_time" content="2017-11-17T06:33:48.884Z">
+<meta property="og:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；  a.堆的插入和删除">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg1.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg2.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg3.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg5.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg6.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg7.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg8.png">
+<meta property="og:updated_time" content="2017-11-17T08:32:17.478Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构(二) 树 &lt;中&gt;">
-<meta name="twitter:description" content="一、二叉搜索树(BST,Binary Search Tree)1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n； 2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；">
-<meta name="twitter:image" content="https://yws.fun/2017/11/17/structure2/strImg1">
+<meta name="twitter:title" content="数据结构(一) 树&lt;下&gt;">
+<meta name="twitter:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；  a.堆的插入和删除">
+<meta name="twitter:image" content="https://yws.fun/2017/11/17/structure3/strImg1.png">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -167,46 +168,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-structure2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-structure3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构(二) 树 &lt;中&gt;
+      数据结构(一) 树&lt;下&gt;
     </h1>
   
 
         
-        <a href="/2017/11/17/structure2/" class="archive-article-date">
-  	<time datetime="2017-11-17T01:39:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
+        <a href="/2017/11/17/structure3/" class="archive-article-date">
+  	<time datetime="2017-11-17T06:35:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、二叉搜索树-BST-Binary-Search-Tree"><a href="#一、二叉搜索树-BST-Binary-Search-Tree" class="headerlink" title="一、二叉搜索树(BST,Binary Search Tree)"></a>一、二叉搜索树(BST,Binary Search Tree)</h2><p>1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n；</p>
-<p>2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；<br><a id="more"></a></p>
-<h4 id="a-二叉搜索树的查找"><a href="#a-二叉搜索树的查找" class="headerlink" title="a.二叉搜索树的查找"></a>a.二叉搜索树的查找</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;1.给定一个数x，如果x比根结点要大，则去右子树查找，如果比根结点值小，则去左子树查找，如果相等即为找到；    </p>
-<p><img src="/2017/11/17/structure2/strImg1" alt="strImg1" title="二叉搜索树查找迭代"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;2.查找最大值和最小值；</p>
-<p><img src="/2017/11/17/structure2/strImg2.png" alt="strImg2" title="查找最大值及最小值"></p>
-<h4 id="b-二叉搜索树插入"><a href="#b-二叉搜索树插入" class="headerlink" title="b.二叉搜索树插入"></a>b.二叉搜索树插入</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;如果小于根结点，则左边插入，如果大于根节点则右边插入，依次递归；</p>
-<p><img src="/2017/11/17/structure2/strImg3.png" alt="strImg3" title="插入"></p>
-<h4 id="c-二叉搜索树删除"><a href="#c-二叉搜索树删除" class="headerlink" title="c.二叉搜索树删除"></a>c.二叉搜索树删除</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 三种情况：1.如果删除的结点是叶结点，直接删除，并修改其父亲结点的指针为null；</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;2.只有一个孩子，将其父结点的指针指向要删除结点的孩子结点；</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;3.如果左右两边都有孩子，用另一结点替代被删除的结点，取右子树的最小元素代替，或者左子树的最大元素代替，可以保证所取的数都为叶结点；</p>
-<p><img src="/2017/11/17/structure2/strImg4.png" alt="strImg4" title="二叉树删除"></p>
-<h2 id="二、平衡二叉树-AVL，log2-n"><a href="#二、平衡二叉树-AVL，log2-n" class="headerlink" title="二、平衡二叉树(AVL，log2(n))"></a>二、平衡二叉树(AVL，log2(n))</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;1.搜索树插入次序不同，导致不同的深度和平均查找长度ASL也不同；</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;2.平衡因子(BF,Balance Factor)：左子树的高度减去右子树的高度，所谓的平衡二叉树指的就是左、右子树的高度差的绝对值不超过1；</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;3.所需最小结点数，高度为0，则1个，高度为1，则为2个，高度为2，则需要4个…类似斐波那契函数+1；</p>
-<h4 id="d-平衡二叉树的旋转"><a href="#d-平衡二叉树的旋转" class="headerlink" title="d.平衡二叉树的旋转"></a>d.平衡二叉树的旋转</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;1.RR旋转，即右旋转，遵照“破坏者”，“被破坏者”所在的位置的连线，进行旋转；</p>
-<p><img src="/2017/11/17/structure2/strImg5.png" alt="strImg5" title="右旋转"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;2.LL旋转，左旋转；</p>
-<p><img src="/2017/11/17/structure2/strImg6.png" alt="strImg6" title="LL旋转"></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;3.LR旋转，左右旋转；<br>&nbsp;&nbsp;&nbsp;&nbsp;4.RL旋转，右左旋转；</p>
+        <h2 id="一、堆"><a href="#一、堆" class="headerlink" title="一、堆"></a>一、堆</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；<br>&nbsp;&nbsp;&nbsp;&nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；</p>
+<p><img src="/2017/11/17/structure3/strImg1.png" alt="strImg1" title="优先列队的二叉树表示"></p>
+<h4 id="a-堆的插入和删除"><a href="#a-堆的插入和删除" class="headerlink" title="a.堆的插入和删除"></a>a.堆的插入和删除</h4><p>1.插入：</p>
+<p>2.删除：例：最大堆删除，删除根结点，并用最后的叶子元素替换根结点原来的位置，观察替换后数据的有效性，然后与左右两个孩子进行比较，取出最大的，然后替换位置，一次比较，直到位置正确；</p>
+<p><img src="/2017/11/17/structure3/strImg2.png" alt="strImg2" title="最大堆的删除"></p>
+<p>3.建立最大堆</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;将n多元素按照最大堆的要求，存放在一维数组中，可先将元素按输入顺序存入，满足完全二叉树的结构特性，调整各结点的位置，满足最大堆的有效性；一般从倒数第一个有儿子的结点开始，一次调成堆，(O)复杂度；</p>
+<h2 id="哈夫曼树与哈夫曼编码"><a href="#哈夫曼树与哈夫曼编码" class="headerlink" title="哈夫曼树与哈夫曼编码"></a>哈夫曼树与哈夫曼编码</h2><p>1.带权路径长度(WPL),最优二叉树或者哈夫曼树，WPL最小的二叉树;</p>
+<p><img src="/2017/11/17/structure3/strImg3.png" alt="strImg3" title="哈夫曼树"></p>
+<p>2.构造哈夫曼树<br>&nbsp;&nbsp;&nbsp;&nbsp;对数据的权值进行排序，之后把权值最小的两个结点进行合并，最终合并为一颗二叉树；也可以利用最小堆构造，效率较高(nlogn)，如下图：</p>
+<p><img src="/2017/11/17/structure3/strImg5.png" alt="strImg5" title="构造哈夫曼树"></p>
+<p>3.特点：没有度为1(至少有两个结点组成)的结点；n个叶子结点的哈夫曼数共有2n - 1 个结点；哈夫曼树的任意非叶节点的左右子树交换之后仍然是哈夫曼树；具有相同的权值，其哈夫曼数的结构可能存在不同，但是WPL值必定相同；</p>
+<p><img src="/2017/11/17/structure3/strImg6.png" alt="strImg6" title="哈夫曼不同构"></p>
+<p>4.编码最短，利用哈夫曼结构，最关键的问题在于避免二义性，即任何字符的编码都不是另一个字符编码的前缀；</p>
+<h2 id="集合的表示与运算"><a href="#集合的表示与运算" class="headerlink" title="集合的表示与运算"></a>集合的表示与运算</h2><p>1.使用树结构进行表示，不同的子树指向根节点，使用双亲表示法；</p>
+<p><img src="/2017/11/17/structure3/strImg7.png" alt="strImg7" title="集合的表示"></p>
+<p>2.使用数组进行存储；分别找到x1,x2的两个元素所在集合树的根节点，如果不同根，则将其中一个根结点的父结点指针设置成另一个根结点的数组下标；尽量将小的集合合并在大的集合上，并且可以将根结点的下标改为|-元素个数|，清楚地知道集合的大小；</p>
+<p><img src="/2017/11/17/structure3/strImg8.png" alt="img8" title="数组表示集合，并且优化为负数下标绝对值为元素个数，便于判断集合大小"></p>
 
       
 
@@ -246,7 +245,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
         		</li>
       		
 		</ul>
@@ -258,7 +257,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/树//" class="article-tag-list-link color2">树</a>
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -313,7 +312,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yws.fun/2017/11/17/structure2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yws.fun/2017/11/17/structure3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,18 +326,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/17/structure3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构(一) 树&lt;下&gt;
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/16/structure1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构(一)   树&lt;上&gt;</div>
+    <a href="/2017/11/17/structure2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构(二) 树 &lt;中&gt;</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -369,8 +359,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://yws.fun/2017/11/17/structure2/", 
-    sourceId: "structure2",
+    url: "https://yws.fun/2017/11/17/structure3/", 
+    sourceId: "structure3",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };

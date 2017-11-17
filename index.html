@@ -161,6 +161,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-structure3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/17/structure3/">数据结构(一) 树&lt;下&gt;</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/17/structure3/" class="archive-article-date">
+  	<time datetime="2017-11-17T06:35:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、堆"><a href="#一、堆" class="headerlink" title="一、堆"></a>一、堆</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；<br>&nbsp;&nbsp;&nbsp;&nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；</p>
+<p><img src="/2017/11/17/structure3/strImg1.png" alt="strImg1" title="优先列队的二叉树表示"></p>
+<h4 id="a-堆的插入和删除"><a href="#a-堆的插入和删除" class="headerlink" title="a.堆的插入和删除"></a>a.堆的插入和删除</h4><p>1.插入：</p>
+<p>2.删除：例：最大堆删除，删除根结点，并用最后的叶子元素替换根结点原来的位置，观察替换后数据的有效性，然后与左右两个孩子进行比较，取出最大的，然后替换位置，一次比较，直到位置正确；</p>
+<p><img src="/2017/11/17/structure3/strImg2.png" alt="strImg2" title="最大堆的删除"></p>
+<p>3.建立最大堆</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;将n多元素按照最大堆的要求，存放在一维数组中，可先将元素按输入顺序存入，满足完全二叉树的结构特性，调整各结点的位置，满足最大堆的有效性；一般从倒数第一个有儿子的结点开始，一次调成堆，(O)复杂度；</p>
+<h2 id="哈夫曼树与哈夫曼编码"><a href="#哈夫曼树与哈夫曼编码" class="headerlink" title="哈夫曼树与哈夫曼编码"></a>哈夫曼树与哈夫曼编码</h2><p>1.带权路径长度(WPL),最优二叉树或者哈夫曼树，WPL最小的二叉树;</p>
+<p><img src="/2017/11/17/structure3/strImg3.png" alt="strImg3" title="哈夫曼树"></p>
+<p>2.构造哈夫曼树<br>&nbsp;&nbsp;&nbsp;&nbsp;对数据的权值进行排序，之后把权值最小的两个结点进行合并，最终合并为一颗二叉树；也可以利用最小堆构造，效率较高(nlogn)，如下图：</p>
+<p><img src="/2017/11/17/structure3/strImg5.png" alt="strImg5" title="构造哈夫曼树"></p>
+<p>3.特点：没有度为1(至少有两个结点组成)的结点；n个叶子结点的哈夫曼数共有2n - 1 个结点；哈夫曼树的任意非叶节点的左右子树交换之后仍然是哈夫曼树；具有相同的权值，其哈夫曼数的结构可能存在不同，但是WPL值必定相同；</p>
+<p><img src="/2017/11/17/structure3/strImg6.png" alt="strImg6" title="哈夫曼不同构"></p>
+<p>4.编码最短，利用哈夫曼结构，最关键的问题在于避免二义性，即任何字符的编码都不是另一个字符编码的前缀；</p>
+<h2 id="集合的表示与运算"><a href="#集合的表示与运算" class="headerlink" title="集合的表示与运算"></a>集合的表示与运算</h2><p>1.使用树结构进行表示，不同的子树指向根节点，使用双亲表示法；</p>
+<p><img src="/2017/11/17/structure3/strImg7.png" alt="strImg7" title="集合的表示"></p>
+<p>2.使用数组进行存储；分别找到x1,x2的两个元素所在集合树的根节点，如果不同根，则将其中一个根结点的父结点指针设置成另一个根结点的数组下标；尽量将小的集合合并在大的集合上，并且可以将根结点的下标改为|-元素个数|，清楚地知道集合的大小；</p>
+<p><img src="/2017/11/17/structure3/strImg8.png" alt="img8" title="数组表示集合，并且优化为负数下标绝对值为元素个数，便于判断集合大小"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/17/structure3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-structure2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -168,7 +270,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/17/structure2/">数据结构(二) 树 &lt;下&gt;</a>
+      <a class="article-title" href="/2017/11/17/structure2/">数据结构(二) 树 &lt;中&gt;</a>
     </h1>
   
 
@@ -338,93 +440,6 @@
 
 
   
-    <article id="post-encoding" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/13/encoding/">解决ubuntu16.04下sublime text3不能输入中文的问题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/13/encoding/" class="archive-article-date">
-  	<time datetime="2017-11-13T07:48:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="1-更新并升级系统为最新-较新的系统会解决很多可能出现的问题"><a href="#1-更新并升级系统为最新-较新的系统会解决很多可能出现的问题" class="headerlink" title="1.更新并升级系统为最新(较新的系统会解决很多可能出现的问题)"></a>1.更新并升级系统为最新(较新的系统会解决很多可能出现的问题)</h5><h5 id="nbsp-nbsp-nbsp-nbsp-sudo-apt-get-update-amp-amp-sudo-apt-get-upgrade"><a href="#nbsp-nbsp-nbsp-nbsp-sudo-apt-get-update-amp-amp-sudo-apt-get-upgrade" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;sudo apt-get update &amp;&amp; sudo apt-get upgrade"></a>&nbsp;&nbsp;&nbsp;&nbsp;sudo apt-get update &amp;&amp; sudo apt-get upgrade</h5><h5 id="2-克隆项目到本地"><a href="#2-克隆项目到本地" class="headerlink" title="2.克隆项目到本地"></a>2.克隆项目到本地</h5><h5 id="nbsp-nbsp-nbsp-nbsp-git-clone-https-github-com-lyfeyaj-sublime-text-imfix-git"><a href="#nbsp-nbsp-nbsp-nbsp-git-clone-https-github-com-lyfeyaj-sublime-text-imfix-git" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;git clone https://github.com/lyfeyaj/sublime-text-imfix.git"></a>&nbsp;&nbsp;&nbsp;&nbsp;git clone <a href="https://github.com/lyfeyaj/sublime-text-imfix.git" target="_blank" rel="external">https://github.com/lyfeyaj/sublime-text-imfix.git</a></h5>
-        
-          <a class="article-more-a" href="/2017/11/13/encoding/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">issue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/sublime-text3//" class="article-tag-list-link color4">sublime text3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/13/encoding/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -522,19 +537,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">issue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hello</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计划书</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">issue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hello</a>
               </li>
              
               <li class="article-tag-list-item">
