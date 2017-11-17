@@ -6,18 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>Archives: 2017/11 | yws博客</title>
+  <title>structure2 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对过去的行为说声抱歉">
-<meta name="keywords" content="Java&#x2F;python&#x2F;Android&#x2F;渴望成长...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yws博客">
-<meta property="og:url" content="https://yws.fun/archives/2017/11/index.html">
+  <meta name="description" content="一、二叉搜索树(BST,Binary Search Tree)1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n； 2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；">
+<meta name="keywords" content="数据结构(二) 树 &lt;下&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="structure2">
+<meta property="og:url" content="https://yws.fun/2017/11/17/structure2/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="对过去的行为说声抱歉">
+<meta property="og:description" content="一、二叉搜索树(BST,Binary Search Tree)1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n； 2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg1">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg2.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg3.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg4.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg5.png">
+<meta property="og:image" content="https://yws.fun/2017/11/17/structure2/strImg6.png">
+<meta property="og:updated_time" content="2017-11-17T03:25:31.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yws博客">
-<meta name="twitter:description" content="对过去的行为说声抱歉">
+<meta name="twitter:title" content="structure2">
+<meta name="twitter:description" content="一、二叉搜索树(BST,Binary Search Tree)1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n； 2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；">
+<meta name="twitter:image" content="https://yws.fun/2017/11/17/structure2/strImg1">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -159,36 +167,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-structure2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/17/structure2/" class="archive-article-date">
-  	<time datetime="2017-11-17T01:39:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/17/structure2/">structure2</a>
+    <h1 class="article-title" itemprop="name">
+      structure2
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/11/17/structure2/" class="archive-article-date">
+  	<time datetime="2017-11-17T01:39:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、二叉搜索树-BST-Binary-Search-Tree"><a href="#一、二叉搜索树-BST-Binary-Search-Tree" class="headerlink" title="一、二叉搜索树(BST,Binary Search Tree)"></a>一、二叉搜索树(BST,Binary Search Tree)</h2><p>1.主要针对动态查找问题，例如在查找的过程中，数据随时会插入或者删除，二叉树在查找之前对数据进行了有效的组织，时间复杂度降为了log2^n；</p>
+<p>2.当前根结点比所有左儿子的值要大，比右儿子的值要小，将查找的问题转换为对几根结点的判断；<br><a id="more"></a></p>
+<h4 id="a-二叉搜索树的查找"><a href="#a-二叉搜索树的查找" class="headerlink" title="a.二叉搜索树的查找"></a>a.二叉搜索树的查找</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;1.给定一个数x，如果x比根结点要大，则去右子树查找，如果比根结点值小，则去左子树查找，如果相等即为找到；    </p>
+<p><img src="/2017/11/17/structure2/strImg1" alt="strImg1" title="二叉搜索树查找迭代"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.查找最大值和最小值；</p>
+<p><img src="/2017/11/17/structure2/strImg2.png" alt="strImg2" title="查找最大值及最小值"></p>
+<h4 id="b-二叉搜索树插入"><a href="#b-二叉搜索树插入" class="headerlink" title="b.二叉搜索树插入"></a>b.二叉搜索树插入</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;如果小于根结点，则左边插入，如果大于根节点则右边插入，依次递归；</p>
+<p><img src="/2017/11/17/structure2/strImg3.png" alt="strImg3" title="插入"></p>
+<p>####c.二叉搜索树删除<br>&nbsp;&nbsp;&nbsp;&nbsp; 三种情况：1.如果删除的结点是叶结点，直接删除，并修改其父亲结点的指针为null；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.只有一个孩子，将其父结点的指针指向要删除结点的孩子结点；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3.如果左右两边都有孩子，用另一结点替代被删除的结点，取右子树的最小元素代替，或者左子树的最大元素代替，可以保证所取的数都为叶结点；</p>
+<p><img src="/2017/11/17/structure2/strImg4.png" alt="strImg4" title="二叉树删除"></p>
+<h2 id="二、平衡二叉树-AVL，log2-n"><a href="#二、平衡二叉树-AVL，log2-n" class="headerlink" title="二、平衡二叉树(AVL，log2(n))"></a>二、平衡二叉树(AVL，log2(n))</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;1.搜索树插入次序不同，导致不同的深度和平均查找长度ASL也不同；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.平衡因子(BF,Balance Factor)：左子树的高度减去右子树的高度，所谓的平衡二叉树指的就是左、右子树的高度差的绝对值不超过1；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3.所需最小结点数，高度为0，则1个，高度为1，则为2个，高度为2，则需要4个…类似斐波那契函数+1；</p>
+<p>####d.平衡二叉树的旋转</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1.RR旋转，即右旋转，遵照“破坏者”，“被破坏者”所在的位置的连线，进行旋转；</p>
+<p><img src="/2017/11/17/structure2/strImg5.png" alt="strImg5" title="右旋转"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.LL旋转，左旋转；</p>
+<p><img src="/2017/11/17/structure2/strImg6.png" alt="strImg6" title="LL旋转"></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3.LR旋转，左右旋转；<br>&nbsp;&nbsp;&nbsp;&nbsp;4.RL旋转，右左旋转；</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you !<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/yws.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,7 +253,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -213,118 +266,114 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yws.fun/2017/11/17/structure2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/16/structure1/" class="archive-article-date">
-  	<time datetime="2017-11-16T00:14:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/16/structure1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构(一)   树&lt;上&gt;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/16/structure1/">数据结构(一)   树&lt;上&gt;</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/13/encoding/" class="archive-article-date">
-  	<time datetime="2017-11-13T07:48:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/13/encoding/">解决ubuntu16.04下sublime text3不能输入中文的问题</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">issue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/sublime-text3//" class="article-tag-list-link color4">sublime text3</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://yws.fun/2017/11/17/structure2/", 
+    sourceId: "structure2",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/11/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -348,8 +397,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
