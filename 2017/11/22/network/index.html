@@ -6,28 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>数据结构(一) 树&lt;下&gt; | yws博客</title>
+  <title>网络分层 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；">
-<meta name="keywords" content="树">
+  <meta name="description" content="一、基本分层（其中tcp/ip协议族一般分为四层）&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;此处将分层为普遍意义上的五层，由高到低，分别为应用层、运输层、网络层、数据链路层以及物理层。">
+<meta name="keywords" content="tcp&#x2F;ip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构(一) 树&lt;下&gt;">
-<meta property="og:url" content="https://yws.fun/2017/11/17/structure3/index.html">
+<meta property="og:title" content="网络分层">
+<meta property="og:url" content="https://yws.fun/2017/11/22/network/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg1.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg9.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg2.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg3.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg5.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg6.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg7.png">
-<meta property="og:image" content="https://yws.fun/2017/11/17/structure3/strImg8.png">
-<meta property="og:updated_time" content="2017-11-17T08:50:04.936Z">
+<meta property="og:description" content="一、基本分层（其中tcp/ip协议族一般分为四层）&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;此处将分层为普遍意义上的五层，由高到低，分别为应用层、运输层、网络层、数据链路层以及物理层。">
+<meta property="og:image" content="https://yws.fun/2017/11/22/network/tcpHead.gif">
+<meta property="og:image" content="https://yws.fun/2017/11/22/network/tcpconnection.png">
+<meta property="og:image" content="https://yws.fun/2017/11/22/network/tcpcloseconnection.png">
+<meta property="og:updated_time" content="2017-11-23T01:38:06.869Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构(一) 树&lt;下&gt;">
-<meta name="twitter:description" content="一、堆&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；">
-<meta name="twitter:image" content="https://yws.fun/2017/11/17/structure3/strImg1.png">
+<meta name="twitter:title" content="网络分层">
+<meta name="twitter:description" content="一、基本分层（其中tcp/ip协议族一般分为四层）&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;此处将分层为普遍意义上的五层，由高到低，分别为应用层、运输层、网络层、数据链路层以及物理层。">
+<meta name="twitter:image" content="https://yws.fun/2017/11/22/network/tcpHead.gif">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -169,45 +164,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-structure3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-network" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构(一) 树&lt;下&gt;
+      网络分层
     </h1>
   
 
         
-        <a href="/2017/11/17/structure3/" class="archive-article-date">
-  	<time datetime="2017-11-17T06:35:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
+        <a href="/2017/11/22/network/" class="archive-article-date">
+  	<time datetime="2017-11-22T10:43:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、堆"><a href="#一、堆" class="headerlink" title="一、堆"></a>一、堆</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;1.优先队列（Priority Queue）:特殊的队列，取出元素的顺序是依照元素的优先权大小进行排列；<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;2.对优先列队的管理，堆使用完全二叉树存储数据，并且每个节点的值都大于其左右两边孩子的值，注意：堆必须是有序的完全二叉树，另外在堆顶0的位置，会放一个“哨兵”防止越界比较；</p>
-<p><img src="/2017/11/17/structure3/strImg1.png" alt="strImg1" title="优先列队的二叉树表示"></p>
-<h4 id="堆的插入和删除"><a href="#堆的插入和删除" class="headerlink" title="堆的插入和删除"></a>堆的插入和删除</h4><p>1.插入：将插入的元素放堆中的最后一个位置，并且保证有序性，如果破坏了有序性，则交换位置，依次进行比较；</p>
-<p><img src="/2017/11/17/structure3/strImg9.png" alt="strImg9" title="堆中插入元素"></p>
-<p>2.删除：例：最大堆删除，删除根结点，并用最后的叶子元素替换根结点原来的位置，观察替换后数据的有效性，然后与左右两个孩子进行比较，取出最大的，然后替换位置，一次比较，直到位置正确；</p>
-<p><img src="/2017/11/17/structure3/strImg2.png" alt="strImg2" title="最大堆的删除"></p>
-<p>3.建立最大堆</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;将n多元素按照最大堆的要求，存放在一维数组中，可先将元素按输入顺序存入，满足完全二叉树的结构特性，调整各结点的位置，满足最大堆的有效性；一般从倒数第一个有儿子的结点开始，一次调成堆，(O)复杂度；</p>
-<h2 id="哈夫曼树与哈夫曼编码"><a href="#哈夫曼树与哈夫曼编码" class="headerlink" title="哈夫曼树与哈夫曼编码"></a>哈夫曼树与哈夫曼编码</h2><p>1.带权路径长度(WPL),最优二叉树或者哈夫曼树，WPL最小的二叉树;</p>
-<p><img src="/2017/11/17/structure3/strImg3.png" alt="strImg3" title="哈夫曼树"></p>
-<p>2.构造哈夫曼树<br>&nbsp;&nbsp;&nbsp;&nbsp;对数据的权值进行排序，之后把权值最小的两个结点进行合并，最终合并为一颗二叉树；也可以利用最小堆构造，效率较高(nlogn)，如下图：</p>
-<p><img src="/2017/11/17/structure3/strImg5.png" alt="strImg5" title="构造哈夫曼树"></p>
-<p>3.特点：没有度为1(至少有两个结点组成)的结点；n个叶子结点的哈夫曼数共有2n - 1 个结点；哈夫曼树的任意非叶节点的左右子树交换之后仍然是哈夫曼树；具有相同的权值，其哈夫曼数的结构可能存在不同，但是WPL值必定相同；</p>
-<p><img src="/2017/11/17/structure3/strImg6.png" alt="strImg6" title="哈夫曼不同构"></p>
-<p>4.编码最短，利用哈夫曼结构，最关键的问题在于避免二义性，即任何字符的编码都不是另一个字符编码的前缀；</p>
-<h2 id="集合的表示与运算"><a href="#集合的表示与运算" class="headerlink" title="集合的表示与运算"></a>集合的表示与运算</h2><p>1.使用树结构进行表示，不同的子树指向根节点，使用双亲表示法；</p>
-<p><img src="/2017/11/17/structure3/strImg7.png" alt="strImg7" title="集合的表示"></p>
-<p>2.使用数组进行存储；分别找到x1,x2的两个元素所在集合树的根节点，如果不同根，则将其中一个根结点的父结点指针设置成另一个根结点的数组下标；尽量将小的集合合并在大的集合上，并且可以将根结点的下标改为|-元素个数|，清楚地知道集合的大小；</p>
-<p><img src="/2017/11/17/structure3/strImg8.png" alt="img8" title="数组表示集合，并且优化为负数下标绝对值为元素个数，便于判断集合大小"></p>
+        <h3 id="一、基本分层（其中tcp-ip协议族一般分为四层）"><a href="#一、基本分层（其中tcp-ip协议族一般分为四层）" class="headerlink" title="一、基本分层（其中tcp/ip协议族一般分为四层）"></a>一、基本分层（其中tcp/ip协议族一般分为四层）</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;此处将分层为普遍意义上的五层，由高到低，分别为应用层、运输层、网络层、数据链路层以及物理层。<br><a id="more"></a></p>
+<h4 id="1-应用层"><a href="#1-应用层" class="headerlink" title="1.应用层"></a>1.应用层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;应用层是体系结构中的最高层，通过特定应用进程间的交互来完成特定网络应用，此层定义的是应用进程通信和交互的规则；在应用层的协议有域名系统(DNS)、HTTP协议、邮件SMTP协议等，通常把应用层交互的数据单元称为报文；</p>
+<h4 id="2-运输层"><a href="#2-运输层" class="headerlink" title="2.运输层"></a>2.运输层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;主要负责向两台主机中进程之间的通信提供<strong>通用的数据传输</strong>服务，应用层进程利用该服务传送应用层报文，多种应用可以使用同一个运输层服务，运输层具有重用和复用的功能；<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>运输层主要有两种协议：</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>a</strong>.传输控制协议TCP，提供面向连接的、可靠的数据传输服务，其数据传输的单位是报文段；<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>b</strong>.用户数据报协议UDP，提供无连接的、尽最大努力的传输数据服务，不保证可靠性，其数据传输单位是用户数据报；</p>
+<h4 id="3-网络层"><a href="#3-网络层" class="headerlink" title="3.网络层"></a>3.网络层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;主要负责为分组交换网上的不同主机提供通信服务，在发送数据的时，网络层把运输层产生的报文段或用户数据报封装成分组或包进行传送，由于网络层使用IP协议，分组也称IP数据报；其次，网络层还要选择合适的路由，使源主机运输层所传下来的分组，能够通过网络中的路由器找到主机；</p>
+<h4 id="4-数据链路层"><a href="#4-数据链路层" class="headerlink" title="4.数据链路层"></a>4.数据链路层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>As all we know,</strong>两台主机之间的数据传输，总是在一段一段的链路上传送的，需要专门的链路层协议，在两个相邻结点之间传输数据时，数据链路层将网络层交下来的IP数据报组装成帧，在两个相邻结点间链路上传送帧，每一帧都包括数据和必要的控制信息，如同步信息、地址信息、差错控制等；</p>
+<h4 id="5-物理层"><a href="#5-物理层" class="headerlink" title="5.物理层"></a>5.物理层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;物理层所传送数据的基本单位是比特，即如何使用０或１接收，控制电压等物理媒介；<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>对于分层整体运行</strong>，可以做这样一个简单的比喻，有一份快递从最高层向下传递，每经过一层就包一层新的包装，写上必要的地址信息，包有多个包装的快递送到目的站后，再从第一层开始，每层拆开一个包装然后就把快递交给上一层，直到最高层，取出快递交给用户；每层之间对等的数据单位称为<strong>协议数据单元PDU(control data unit)</strong>；</p>
+<h3 id="二、分层详解，以tcp-ip为主"><a href="#二、分层详解，以tcp-ip为主" class="headerlink" title="二、分层详解，以tcp/ip为主"></a>二、分层详解，以tcp/ip为主</h3><h4 id="１-网络层"><a href="#１-网络层" class="headerlink" title="１.网络层"></a>１.网络层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>１.传输“中介”</strong>：<br>&nbsp;&nbsp;&nbsp;&nbsp;１.互联网连接所需要的中间设备按照分层可分为：<br>&nbsp;&nbsp;&nbsp;&nbsp; a.物理层：转发器；<br>&nbsp;&nbsp;&nbsp;&nbsp; b.数据链路层：网桥或桥接器；<br>&nbsp;&nbsp;&nbsp;&nbsp; c.网路层：路由器；<br>&nbsp;&nbsp;&nbsp;&nbsp; d.网路层以上：网关；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <strong>2.ip详解</strong>：<br>&nbsp;&nbsp;&nbsp;&nbsp; ip地址是给互联网的每一台主机（或路由器）的每一个接口分配一个在全世界范围内唯一的３２位标识符，有了ip可以网络上方便地寻址，由两个固定长度的字段组成，网络号和主机号；网络中所指的ip地址为逻辑ip地址；<br>&nbsp;&nbsp;&nbsp;&nbsp; <strong>区物理地址</strong>：在发送数据的时候，数据从高层到下层，使用ip地址的ip数据报一旦交给了数据链路层，就被封装成MAC帧，MAC帧在传送时使用的源地址和目的地址都是在硬件地址，这两个地址全部写在MAC帧的首部；链路层的设备在收到MAC帧时，只有剥去MAC的首部和尾部时，把数据交给网络层，网络层才能在ip数据报的首部中找到源ip地址和目的ip地址；可以做出如下区分<strong>ip地址放在数据报的首部，而硬件地址放在MAC帧的首部</strong>，网络层及以上层使用的是ip地址，数据链路层使用的及以下层使用的是硬件地址；<br>&nbsp;&nbsp;&nbsp;&nbsp; <strong>３.ARP协议</strong>：已知主机或者路由器的ip地址，需要找出相应的硬件地址；在主机ARP高速缓存中存放一个从ip地址到硬件地址的映射表，并经常进行动态地更新；当主机Ａ要向本局域网上的某台主机Ｂ发送ip数据报时，就先在其ARP高速缓存中查看有无主机Ｂ的ip地址，如果有，就在ARP高速缓存中查出其对应的硬件地址，再把这个硬件地址写入MAC帧，然后通过局域网把该MAC帧发往此硬件地址；如果查不到B的ip地址，此时主机Ａ就自动运行ARP，通过局域网广播找出Ｂ的ip地址;ARP对每一个映射地址的项目都设置生存时间，超时就从高速缓存中删除，减少了资源的浪费，避免更换主机后的白白发送；</p>
+<h4 id="2-运输层-1"><a href="#2-运输层-1" class="headerlink" title="2.运输层"></a>2.运输层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; １.运输层向上面的应用层提供通信服务，端到端的通信实际是应用进程间的通信，即不是主机而是主机中的进程，运输层有<strong>复用</strong>和<strong>分用</strong>的功能，例如主机在浏览网页、发送邮件、同时还看视频；网络层为主机之间提供逻辑通信，而运输层为应用进程之间提供端到端的逻辑通信；<br>&nbsp;&nbsp;&nbsp;&nbsp; ２.运输层还要对接收到的报文进行差错检测，运输层使用协议端口号，１６位的端口号可允许有65535个端口号。<br>&nbsp;&nbsp;&nbsp;&nbsp; ３.TCP协议/UDP协议<br>&nbsp;&nbsp;&nbsp;&nbsp;TCP提供面向连接的协议，数据传输结束后要释放连接；服务器使用的端口号：登记端口号：１０２４～４９１５１，系统端口号：０～１０２３，如：</p>
+<table>
+<thead>
+<tr>
+<th>应用程序</th>
+<th>FTP</th>
+<th>TELNET</th>
+<th>SMTP</th>
+<th>DNS</th>
+<th>TFTP</th>
+<th>HTTP</th>
+<th>HTTPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>端口号</td>
+<td>21</td>
+<td>23</td>
+<td>25</td>
+<td>53</td>
+<td>69</td>
+<td>80</td>
+<td>443</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;客户端端口号：４９１５２～６５５３５，动态短暂端口号；<br>&nbsp;&nbsp;&nbsp;&nbsp;UDP协议传送数据前不需要面向连接服务；</p>
+<h4 id="a-详解传输控制协议TCP"><a href="#a-详解传输控制协议TCP" class="headerlink" title="a.详解传输控制协议TCP"></a>a.详解传输控制协议TCP</h4><h4 id="b-特点"><a href="#b-特点" class="headerlink" title="b.特点"></a>b.特点</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;1.面向连接；２.每条tcp连接只能有两个端点，每一条tcp连接只能是点对点的连接，即一对一；３．tcp提供可靠交付服务，保证数据的无差错、不丢失、不重复、有序；４．提供全双工通信服务，通信双方在任何时候都能发送数据，tcp连接的两端都设有发送缓存和接收缓存，用来临时存放双向通信的数据，应用程序在把数据发送给tcp的缓存之后，就可以做自己的事，而tcp在合适的时候把数据发送出去，在接收时，tcp把收到的数据放入缓存，上层的应用进程在合适的时候读取缓存中的数据；５.面向字节流。tcp中的流指的是流入进程或从进程中流出的字节序列。</p>
+<h4 id="c-TCP的连接"><a href="#c-TCP的连接" class="headerlink" title="c.TCP的连接"></a>c.TCP的连接</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;TCP连接的连接端点叫<strong>套接字</strong>或者插口，所谓套接字即端口号拼接到IP地址即构成了套接字，每一条tcp的连接唯一地被通信的两个端点即两个套接字所确定；</p>
+<h4 id="d-可靠传输"><a href="#d-可靠传输" class="headerlink" title="d.可靠传输"></a>d.可靠传输</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;１.停止等待协议：发送完一个分组就停止发送，等待对方确认，确认之后再发送下一个分组；２.连续ARQ协议，即滑动窗口协议；</p>
+<h4 id="e-TCP报文段的首部格式"><a href="#e-TCP报文段的首部格式" class="headerlink" title="e.TCP报文段的首部格式"></a>e.TCP报文段的首部格式</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;首部的前２０个字节是固定的，后边4n字节可根据需要增加，tcp首部最小长度是２０字节；<img src="/2017/11/22/network/tcpHead.gif" alt="tcp" title="tcp首部字段示意图"></p>
+<h4 id="f-TCP的可靠传输的实现"><a href="#f-TCP的可靠传输的实现" class="headerlink" title="f.TCP的可靠传输的实现"></a>f.TCP的可靠传输的实现</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;１.以字节为单位的滑动窗口实现<br>&nbsp;&nbsp;&nbsp;&nbsp;假设Ａ向Ｂ发送数据，在没有收到B的确认的情况下，Ａ可以连续地把窗口中的数据都发送出去，凡是已发送的数据，在未确认之前都需要暂时你缓存，以便在超时重传的时候使用；发送窗口一般不动或者向前，无法后退因为不能撤销已经发送的数据；<br>&nbsp;&nbsp;&nbsp;&nbsp;２.超时重传时间的选择<br>&nbsp;&nbsp;&nbsp;&nbsp;超时重传问题的关键在于如何设置超时时间，TCP采用了自适应算法，记录一个报文段发出的时间，以及收到相应的确认的时间，这个时间差就是<strong>报文段的往返时间RTT</strong>，超时设置<strong>RTO(超时重传时间)</strong>；</p>
+<h4 id="g-选择确认SACK"><a href="#g-选择确认SACK" class="headerlink" title="g.选择确认SACK"></a>g.选择确认SACK</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;作用在于，加入传送的数据有一部分传送了，而有一部没有传送成功，则只需要传输没有传输成功的数据，接收方告诉传送方，不用再把全部的窗口数据全部发送出去；</p>
+<h4 id="h-TCP的流量控制"><a href="#h-TCP的流量控制" class="headerlink" title="h.TCP的流量控制"></a>h.TCP的流量控制</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;１.利用滑动窗口实现流量控制<br>&nbsp;&nbsp;&nbsp;&nbsp;使得发送方的发送速率不要过快，接收方可以来得及接收；显示中广泛使用Nagle算法，把要发送的数据逐个字节地送到tcp的发送缓存，先把第一个数据字节先发送出去，把后面到达的数据字节都缓存起来，当收到确认后，再把剩下的所有数据都组装成一个报文段发送出去；<strong>糊涂窗口综合征</strong>，例：即接收方缓存已满，应用每次只读一个字节，然后每次发送一个字节，效率极低；</p>
+<h4 id="l-TCP拥塞控制"><a href="#l-TCP拥塞控制" class="headerlink" title="l.TCP拥塞控制"></a>l.TCP拥塞控制</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;某段时间内，对网络中某一资源的需求超过了该资源所能提供的可用部分，网络性能会变坏，就会发生拥塞；所谓的拥塞控制就是防止过多的数据注入到网络中，这样可以使得网络中的路由器或链路层不至于过载，<strong>吞吐量</strong>代表单位时间内从网络输出的分组数目；网络拥塞控制是一个复杂、动态的过程，单一的解决措施是很难实现的，还可能适得其反；<br>&nbsp;&nbsp;&nbsp;&nbsp;方法：<br>&nbsp;&nbsp;&nbsp;&nbsp;１.慢开始和拥塞避免<br>&nbsp;&nbsp;&nbsp;&nbsp;基于窗口的拥塞控制，发送方维持一个拥塞窗口(cwnd)的状态变量，拥塞窗口的大小取决于网络的拥塞程度，并且可以动态地进行变化，发送方让自己的发送窗口等于拥塞窗口。当网络发生拥塞时，路由器就要丢弃分组，判断网络拥塞的依据就是是否超时。<strong>慢开始</strong>，从小到达逐渐地发送窗口数值，一般报文段以２倍进行扩大。<strong>拥塞避免算法</strong>，让拥塞窗口缓慢地增长，呈线性规律地“加法”缓慢增长；<strong>AIMD算法</strong>，加法增大和乘法(缩小一半)减小控制；<br>&nbsp;&nbsp;&nbsp;&nbsp;２.主动队列管理AQM<br>&nbsp;&nbsp;&nbsp;&nbsp;即在路由器等待列队的长度达到某个值得警惕的数值时，就丢弃后边到达的分组，不用等到队列完全排满之后进行丢弃；主动地提醒了发送方放慢传输速率，使得拥塞减轻，避免出现突然的网络拥塞；如<strong>随机早期检测RED</strong>，按照规定的算法计算当前的平均队列长度，若平均队列长度小于最小门限，则把新到达的分组放入队列进行排队，超过则把新到达的分组进行丢弃，如果介于最大和最小门限之间，则按照一定的概率，进行随机地把新到达的分组进行丢弃。</p>
+<h4 id="m-TCP运输连接管理-即常说的握手"><a href="#m-TCP运输连接管理-即常说的握手" class="headerlink" title="m.TCP运输连接管理(即常说的握手)"></a>m.TCP运输连接管理(即常说的握手)</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;运输链接有三个阶段：连接建立、数据传送、释放连接；<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>三次握手</strong>：<br>&nbsp;&nbsp;&nbsp;&nbsp;１.假设A为客户机，B为服务器：一开始Ｂ的TCP服务器进程先创建传输控制模块TCB，准备接收客户进程的连接请求，然后服务器就处于ｌｉｓｔｅｎｉｎｇ状态；A的TCP客户进程也是首先创建传输控制模块TCB，在打算建立TCP连接时，向B发出连接请求报文段；这时首部中的同步位ＳＹＮ　＝　１，同时选择一个初始序号seq　＝　x。TCP规定，SYN报文段(即SYN　＝　１的报文段)不能携带数据，但要消耗掉一个序号；此时，<strong>客户端进程进入SYN-SENT同步已发送状态。</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;2.Ｂ在接收到请求报文之后，同意建立连接，向A发送确认。在确认报文段中应把SYN位和ACK位都置为１，确认号是ack = x + 1，同时也为自己选择一个初始序号seq = y。这个报文段也不能携带数据，同样也要消耗一个序号，此时<strong>TCP服务器进程进入SYN-RCVD同步收到状态</strong>。<br>&nbsp;&nbsp;&nbsp;&nbsp;3.Ａ在接收到B的确认之后，还要向B给出确认；确认报文段的ACK置为１，确认号ack = y + 1，而自己的序号seq = x + 1，TCP的标准规定，ACK报文段可以携带数据，<strong>此时如果不携带则不消耗序号</strong>,下一个数据的报文段的序号仍然是seq = x + 1；这时，如果TCP连接已经建立，A进入ESTABLISHED已建立连接状态，当B收到A的确认之后，也进入已建立连接状态。</p>
+<p><img src="/2017/11/22/network/tcpconnection.png" alt="tcp三次握手" title="tcpImg"></p>
+<h4 id="n-TCP的连接释放"><a href="#n-TCP的连接释放" class="headerlink" title="n.TCP的连接释放"></a>n.TCP的连接释放</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;四次握手释放；<br>&nbsp;&nbsp;&nbsp;&nbsp;１.数据在传输结束之后，通信双方都可以释放连接。现在的A、B都处于ESTABLISHED已经建立连接的状态，A的应用进程首先向其TCP发出连接释放报文段，并停止发送数据，主动关闭TCP连接；A把连接释放报文段首部的终止控制位FIN置为１，其序号seq = u，它等于前面已经发送过数据的最后一个字节号加１，这时A进入FIN-WAIT-1(终止等待１)状态，等待B的确认，FIN如果不携带数据也要消耗掉一个序号；<br>&nbsp;&nbsp;&nbsp;&nbsp;２.B在收到连接释放的报文段后即发出确认，确认号是ack = u + 1，这个报文段自己的序号是v，等于B前边已经传送过的数据的最后一个字节的序号加１，然后B就进入CLOSEWAIT关闭连接状态；<strong>TCP服务器进程这时通知高层应用进程，因而从A-B这个方向的连接就释放了，这时的TCP连接处于半关闭状态，即A已经没有数据要发送了，但B若发送了数据，A仍然要接收，此时B-A这个方向的连接并未关闭</strong>；<br>&nbsp;&nbsp;&nbsp;&nbsp;３.A收到B的确认之后，就进入了FIN-WAIT-２(终止等待２)状态，等待B发出的连接释放报文段。若B没有要向A发送的数据，其应用程序就通知TCP连接释放，这时B发出的连接释放报文段必须使FIN＝１。假定B的序号为w(<strong>即在半关闭的状态又发送了一些数据</strong>)，B还需重复上次已经发送过的确认号ack = u + 1；这时的B就进入了LAST-ACK(最后确认)状态，等待A的确认；<br>&nbsp;&nbsp;&nbsp;&nbsp;4.Ａ在收到B的连接释放报文段后，必须对此发出确认。在确认报文段中把ACK置为１，确认号ack = w + 1，而自己的序号是seq = u + 1，然后进入TIME-WAIT时间等待状态，<strong>此时的TCP连接还没有释放掉</strong>，必须经过时间等待计时器(TIME-WAIT timer)设置的时间2ＭSL后，A才进入到CLOSED状态。MSL称为最长报文段寿命，RFC793建议为２min，实际可能过长。当A撤销相应的传输控制块TCB后，结束了TCP连接。<br>&nbsp;&nbsp;&nbsp;&nbsp;设置等待时间2ＭSL的好处：１.保证Ａ发送的最后一个ACK报文段能够到达A；２.防止已经失效的连接请求报文段，A在发送完最后一个报文段后，进过2ＭSL时间后，就会使本连接持续时间内所产生的所有报文段都从网络中消失；<br><img src="/2017/11/22/network/tcpcloseconnection.png" alt="tcp四次握手释放" title="tcpImg2"></p>
 
       
 
@@ -247,7 +270,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tcp/ip</a>
         		</li>
       		
 		</ul>
@@ -259,7 +282,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/network//" class="article-tag-list-link color3">network</a>
         		</li>
       		
 		</ul>
@@ -314,7 +337,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yws.fun/2017/11/17/structure3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yws.fun/2017/11/22/network/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -328,18 +351,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/22/sort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          八大基础排序算法(Java语言实现)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/17/structure2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构(二) 树 &lt;中&gt;</div>
+    <a href="/2017/11/22/sort/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">八大基础排序算法(Java语言实现)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -370,8 +384,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://yws.fun/2017/11/17/structure3/", 
-    sourceId: "structure3",
+    url: "https://yws.fun/2017/11/22/network/", 
+    sourceId: "network",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
