@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>designPattern | yws博客</title>
+  <title>设计模式 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java设计模式&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。一、单例模式&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 单例模式涉及一个单一的类，该类只负责创建自己的对象，同时还需要确保只有单个的对象被创建；这个类提供了一">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。">
 <meta name="keywords" content="designPattern">
 <meta property="og:type" content="article">
-<meta property="og:title" content="designPattern">
+<meta property="og:title" content="设计模式">
 <meta property="og:url" content="https://yws.fun/2017/11/29/designPattern/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="Java设计模式&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。一、单例模式&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 单例模式涉及一个单一的类，该类只负责创建自己的对象，同时还需要确保只有单个的对象被创建；这个类提供了一">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。">
 <meta property="og:image" content="https://yws.fun/2017/11/29/designPattern/singleton.png">
-<meta property="og:updated_time" content="2017-11-29T16:08:46.967Z">
+<meta property="og:updated_time" content="2017-11-29T16:14:20.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="designPattern">
-<meta name="twitter:description" content="Java设计模式&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。一、单例模式&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 单例模式涉及一个单一的类，该类只负责创建自己的对象，同时还需要确保只有单个的对象被创建；这个类提供了一">
+<meta name="twitter:title" content="设计模式">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。">
 <meta name="twitter:image" content="https://yws.fun/2017/11/29/designPattern/singleton.png">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
@@ -169,7 +169,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      designPattern
+      设计模式
     </h1>
   
 
@@ -182,7 +182,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Java设计模式"><a href="#Java设计模式" class="headerlink" title="Java设计模式"></a>Java设计模式</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。<br>一、单例模式<br>&nbsp;&nbsp;&nbsp;&nbsp; 单例模式涉及一个单一的类，该类只负责创建自己的对象，同时还需要确保只有单个的对象被创建；这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。常用于一个全局使用类被频繁地创建与销毁，如web缓存、IO/数据库等。<br>特点：<br>&nbsp;&nbsp;&nbsp;&nbsp; 1、单例类只能有一个实例；<br>&nbsp;&nbsp;&nbsp;&nbsp; 2、单例类必须自己创建自己的唯一实例；<br>&nbsp;&nbsp;&nbsp;&nbsp; 3、单例类必须给所有其他的对象提供这一实例；<br><strong>a.实现</strong><br><img src="/2017/11/29/designPattern/singleton.png" alt="singleton"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  创建一个Singleton 类</div><div class="line">*/</div><div class="line">  public class Singleton&#123;</div><div class="line">    //创建一个Singleton 的对象</div><div class="line">    private static Singleton instance = new Singleton();</div><div class="line">    //构造函数为私有，使得该类不会被实例化</div><div class="line">    private Singleton()&#123;&#125;</div><div class="line">    //获取唯一可调用的对象</div><div class="line">    public static Singleton getInstance()&#123;</div><div class="line">      return instance;</div><div class="line">    &#125;</div><div class="line">    public void show()&#123;</div><div class="line">      System.out.println(&quot;hello singleton!&quot;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。<br><a id="more"></a><br>一、单例模式<br>&nbsp;&nbsp;&nbsp;&nbsp; 单例模式涉及一个单一的类，该类只负责创建自己的对象，同时还需要确保只有单个的对象被创建；这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。常用于一个全局使用类被频繁地创建与销毁，如web缓存、IO/数据库等。<br>特点：<br>&nbsp;&nbsp;&nbsp;&nbsp; 1、单例类只能有一个实例；<br>&nbsp;&nbsp;&nbsp;&nbsp; 2、单例类必须自己创建自己的唯一实例；<br>&nbsp;&nbsp;&nbsp;&nbsp; 3、单例类必须给所有其他的对象提供这一实例；<br><strong>a.实现</strong><br><img src="/2017/11/29/designPattern/singleton.png" alt="singleton"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  创建一个Singleton 类</div><div class="line">*/</div><div class="line">  public class Singleton&#123;</div><div class="line">    //创建一个Singleton 的对象</div><div class="line">    private static Singleton instance = new Singleton();</div><div class="line">    //构造函数为私有，使得该类不会被实例化</div><div class="line">    private Singleton()&#123;&#125;</div><div class="line">    //获取唯一可调用的对象</div><div class="line">    public static Singleton getInstance()&#123;</div><div class="line">      return instance;</div><div class="line">    &#125;</div><div class="line">    public void show()&#123;</div><div class="line">      System.out.println(&quot;hello singleton!&quot;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  从Singleton获取唯一对象</div><div class="line">*/</div><div class="line">public class getSingleton&#123;</div><div class="line">  public static void main(String[] args)&#123;</div><div class="line">    //获取唯一对象</div><div class="line">    Singleton object = Singleton.getInstance();</div><div class="line">    //调用方法实现</div><div class="line">    object.show();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>b.单例模式的几种实现方式</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;1.懒汉模式，线程不安全<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;懒加载，使用的时候实例化，线程不安全<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  懒汉模式</div><div class="line">*/</div><div class="line">public class Singleton&#123;</div><div class="line">  private static Singleton instance;</div><div class="line">  private static Singleton getInstance()&#123;</div><div class="line">    if(instance == null)&#123;</div><div class="line">      instance = new Singleton();</div><div class="line">    &#125;</div><div class="line">    return instance;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;2.线程安全懒汉模式<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一次调用的时候才初始化，避免了空间的浪费，必须加锁 synchronized 才能保证单例，但加锁会影响效率；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  线程安全懒汉模式</div><div class="line">*/</div><div class="line">public class Singleton&#123;</div><div class="line">    private static Singleton instance;</div><div class="line">    private Singleton()&#123;&#125;</div><div class="line">    public static synchronized Singleton getInstance()&#123;</div><div class="line">      if(instance == null)&#123;</div><div class="line">        instance = new Singleton();</div><div class="line">      &#125;</div><div class="line">      return instance;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
@@ -456,11 +456,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
+                <a href="javascript:void(0)" class="js-tag color1">issue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
+                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,7 +468,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">issue</a>
+                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tcp/ip</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -476,19 +480,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序 逐渐优化</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tcp/ip</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
             
             <div class="clearfix"></div>
