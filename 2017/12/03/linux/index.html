@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>Category: 树 | yws博客</title>
+  <title>linux常用命令 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对过去的行为说声抱歉">
-<meta name="keywords" content="Java&#x2F;python&#x2F;Android&#x2F;渴望成长...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yws博客">
-<meta property="og:url" content="https://yws.fun/categories/树/index.html">
+  <meta name="description" content="文章翻译自：http://www.thegeekstuff.com/2010/11/50-linux-commands/  tar    grep    find    ssh    sed    awk    vim    diff    sort    exportargs    ls    pwd    cd    gzip    bzip2    unzip    shutdown">
+<meta name="keywords" content="常用命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="https://yws.fun/2017/12/03/linux/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="对过去的行为说声抱歉">
+<meta property="og:description" content="文章翻译自：http://www.thegeekstuff.com/2010/11/50-linux-commands/  tar    grep    find    ssh    sed    awk    vim    diff    sort    exportargs    ls    pwd    cd    gzip    bzip2    unzip    shutdown">
+<meta property="og:updated_time" content="2017-12-03T17:07:40.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yws博客">
-<meta name="twitter:description" content="对过去的行为说声抱歉">
+<meta name="twitter:title" content="linux常用命令">
+<meta name="twitter:description" content="文章翻译自：http://www.thegeekstuff.com/2010/11/50-linux-commands/  tar    grep    find    ssh    sed    awk    vim    diff    sort    exportargs    ls    pwd    cd    gzip    bzip2    unzip    shutdown">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -159,71 +160,544 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-linux" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/17/structure2/" class="archive-article-date">
-  	<time datetime="2017-11-17T01:39:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/17/structure2/">数据结构(二) 树 &lt;中&gt;</a>
+    <h1 class="article-title" itemprop="name">
+      linux常用命令
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/03/linux/" class="archive-article-date">
+  	<time datetime="2017-12-03T15:28:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>文章翻译自：<a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/" target="_blank" rel="external">http://www.thegeekstuff.com/2010/11/50-linux-commands/</a></p>
+<blockquote>
+<p>tar    grep    find    ssh    sed    awk    vim    diff    sort    export<br>args    ls    pwd    cd    gzip    bzip2    unzip    shutdown    ftp    crontab<br>service    ps    free    top    df    kill    rm    cp    mv    cat<br>mount    chmod    chown    passwd    mkdir    ifconfig    uname    whereis    whatis    locate<br>man    tail    less    su    mysql    yum    rpm    ping    date    wget<br><a id="more"></a></p>
+<ol>
+<li>tar<br>创建一个新的tar文件</li>
+</ol>
+<p>tar cvf archive_name.tar dirname/<br>解压tar文件</p>
+<p>tar xvf archive_name.tar<br>查看tar文件</p>
+<p>tar tvf archive_name.tar<br>更多示例：The Ultimate Tar Command Tutorial with 10 Practical Examples</p>
+</blockquote>
+<ol>
+<li>grep<br>在文件中查找字符串(不区分大小写)</li>
+</ol>
+<blockquote>
+<p>grep -i “the” demo_file<br>输出成功匹配的行，以及该行之后的三行</p>
+<p>grep -A 3 -i “example” demo_text<br>在一个文件夹中递归查询包含指定字符串的文件</p>
+<p>grep -r “ramesh” *<br>更多示例：Get a Grip on the Grep! – 15 Practical Grep Command Examples</p>
+</blockquote>
+<ol>
+<li>find<br>查找指定文件名的文件(不区分大小写)</li>
+</ol>
+<blockquote>
+<p>find -iname “MyProgram.c”<br>对找到的文件执行某个命令</p>
+<p>find -iname “MyProgram.c” -exec md5sum {} \;<br>查找home目录下的所有空文件</p>
+<p>find ~ -empty<br>更多示例：Mommy, I found it! — 15 Practical Linux Find Command Examples</p>
+</blockquote>
+<ol>
+<li>ssh<br>登录到远程主机</li>
+</ol>
+<blockquote>
+<p>ssh -l jsmith remotehost.example.com<br>调试ssh客户端</p>
+<p>ssh -v -l jsmith remotehost.example.com<br>显示ssh客户端版本</p>
+<p>ssh -V<br>更多示例：5 Basic Linux SSH Client Commands</p>
+</blockquote>
+<ol>
+<li>sed<br>当你将Dos系统中的文件复制到Unix/Linux后，这个文件每行都会以\r\n结尾，sed可以轻易将其转换为Unix格式的文件，使用\n结尾的文件</li>
+</ol>
+<blockquote>
+<p>sed ‘s/.&gt;//‘ filename<br>反转文件内容并输出</p>
+<p>sed -n ‘1!G; h; p’ filename<br>为非空行添加行号</p>
+<p>sed ‘/./=’ thegeekstuff.txt | sed ‘N; s/\n/ /‘<br>更多示例：Advanced Sed Substitution Examples</p>
+</blockquote>
+<ol>
+<li>awk<br>删除重复行</li>
+</ol>
+<blockquote>
+<p>awk ‘!(&gt;0 in array) { array[&gt;0]; print}’ temp<br>打印/etc/passwd中所有包含同样的uid和gid的行</p>
+<p>awk -F ‘:’ ‘&gt;3=&gt;4’ /etc/passwd<br>打印文件中的指定部分的字段</p>
+<p>awk ‘{print &gt;2,&gt;5;}’ employee.txt<br>更多示例：8 Powerful Awk Built-in Variables – FS, OFS, RS, ORS, NR, NF, FILENAME, FNR</p>
+</blockquote>
+<ol>
+<li>vim<br>打开文件并跳到第10行</li>
+</ol>
+<blockquote>
+<p>vim +10 filename.txt<br>打开文件跳到第一个匹配的行</p>
+<p>vim +/search-term filename.txt<br>以只读模式打开文件</p>
+<p>vim -R /etc/passwd<br>更多示例：How To Record and Play in Vim Editor</p>
+</blockquote>
+<ol>
+<li>diff<br>比较的时候忽略空白符</li>
+</ol>
+<blockquote>
+<p>diff -w name_list.txt name_list_new.txt</p>
+<ol>
+<li>sort<br>以升序对文件内容排序</li>
+</ol>
+<p>sort names.txt<br>以降序对文件内容排序</p>
+<p>sort -r names.txt<br>以第三个字段对/etc/passwd的内容排序</p>
+<p>sort -t: -k 3n /etc/passwd | more</p>
+<ol>
+<li>export<br>输出跟字符串oracle匹配的环境变量</li>
+</ol>
+<p>export | grep ORCALE<br>declare -x ORACLE_BASE=”/u01/app/oracle”<br>declare -x ORACLE_HOME=”/u01/app/oracle/product/10.2.0”<br>declare -x ORACLE_SID=”med”<br>declare -x ORACLE_TERM=”xterm”<br>设置全局环境变量</p>
+<p>export ORACLE_HOME=/u01/app/oracle/product/10.2.0</p>
+<ol>
+<li>xargs<br>将所有图片文件拷贝到外部驱动器</li>
+</ol>
+<p>ls *.jpg | xargs -n1 -i cp {} /external-hard-drive/directory<br>将系统中所有jpd文件压缩打包</p>
+<p>find / -name *.jpg -type f -print | xargs tar -cvzf images.tar.gz<br>下载文件中列出的所有url对应的页面</p>
+<p>cat url-list.txt | xargs wget –c</p>
+<ol>
+<li>ls<br>以易读的方式显示文件大小(显示为MB,GB…)</li>
+</ol>
+<p>ls -lh<br>-rw-r—– 1 ramesh team-dev 8.9M Jun 12 15:27 arch-linux.txt.gz<br>以最后修改时间升序列出文件</p>
+<p>ls -ltr<br>在文件名后面显示文件类型</p>
+<p>ls -F<br>更多示例：Unix LS Command: 15 Practical Examples</p>
+</blockquote>
+<ol>
+<li><p>pwd<br>输出当前工作目录</p>
+</li>
+<li><p>cd<br>cd -可以在最近工作的两个目录间切换</p>
+</li>
+</ol>
+<p>使用shopt -s cdspell可以设置自动对cd命令进行拼写检查</p>
+<p>更多示例：6 Awesome Linux cd command Hacks</p>
+<ol>
+<li>gzip<br>创建一个*.gz的压缩文件</li>
+</ol>
+<blockquote>
+<p>gzip test.txt<br>解压*.gz文件</p>
+<p>gzip -d test.txt.gz<br>显示压缩的比率</p>
+<p>gzip -l *.gz<br>     compressed        uncompressed  ratio uncompressed_name<br>          23709               97975  75.8% asp-patch-rpms.txt</p>
+<ol>
+<li>bzip2<br>创建*.bz2压缩文件</li>
+</ol>
+<p>bzip2 test.txt<br>解压*.bz2文件</p>
+</blockquote>
+<p>bzip2 -d test.txt.bz2<br>更多示例：BZ is Eazy! bzip2, bzgrep, bzcmp, bzdiff, bzcat, bzless, bzmore examples</p>
+<ol>
+<li>uzip<br>解压*.zip文件</li>
+</ol>
+<blockquote>
+<p>unzip test.zip<br>查看*.zip文件的内容</p>
+<p>unzip -l jasper.zip<br>Archive:  jasper.zip<br>Length     Date   Time    Name</p>
+<hr>
+<p>40995  11-30-98 23:50   META-INF/MANIFEST.MF<br>32169  08-25-98 21:07   classes_<br>15964  08-25-98 21:07   classes_names<br>10542  08-25-98 21:07   classes_ncomp</p>
+<ol>
+<li>shutdown<br>关闭系统并立即关机</li>
+</ol>
+<p>shutdown -h now<br>10分钟后关机</p>
+<p>shutdown -h +10<br>重启</p>
+<p>shutdown -r now<br>重启期间强制进行系统检查</p>
+<p>shutdown -Fr now</p>
+<ol>
+<li>ftp<br>ftp命令和sftp命令的用法基本相似连接ftp服务器并下载多个文件</li>
+</ol>
+<p>ftp IP/hostname<br>ftp&gt; mget *.html<br>显示远程主机上文件列表</p>
+</blockquote>
+<p>ftp&gt; mls *.html -<br>/ftptest/features.html<br>/ftptest/index.html<br>/ftptest/othertools.html<br>/ftptest/samplereport.html<br>/ftptest/usage.html<br>更多示例：FTP and SFTP Beginners Guide with 10 Examples</p>
+<ol>
+<li>crontab<br>查看某个用户的crontab入口</li>
+</ol>
+<blockquote>
+<p>crontab -u john -l<br>设置一个每十分钟执行一次的计划任务</p>
+</blockquote>
+<p><em>/10 </em> <em> </em> * /home/ramesh/check-disk-space<br>更多示例：Linux Crontab: 15 Awesome Cron Job Examples</p>
+<ol>
+<li>service<br>service命令用于运行System V init脚本，这些脚本一般位于/etc/init.d文件下，这个命令可以直接运行这个文件夹里面的脚本，而不用加上路径</li>
+</ol>
+<p>查看服务状态</p>
+<blockquote>
+<p>service ssh status<br>查看所有服务状态</p>
+<p>service –status-all<br>重启服务</p>
+<p>service ssh restart</p>
+<ol>
+<li>ps<br>ps命令用于显示正在运行中的进程的信息，ps命令有很多选项，这里只列出了几个</li>
+</ol>
+</blockquote>
+<p>查看当前正在运行的所有进程</p>
+<blockquote>
+<p>ps -ef | more<br>以树状结构显示当前正在运行的进程，H选项表示显示进程的层次结构</p>
+<p>ps -efH | more</p>
+<ol>
+<li>free<br>这个命令用于显示系统当前内存的使用情况，包括已用内存、可用内存和交换内存的情况</li>
+</ol>
+</blockquote>
+<p>默认情况下free会以字节为单位输出内存的使用量</p>
+<blockquote>
+<p>free<br>             total       used       free     shared    buffers     cached<br>Mem:       3566408    1580220    1986188          0     203988     902960<br>-/+ buffers/cache:     473272    3093136<br>Swap:      4000176          0    4000176<br>如果你想以其他单位输出内存的使用量，需要加一个选项，-g为GB，-m为MB，-k为KB，-b为字节</p>
+<p>free -g<br>             total       used       free     shared    buffers     cached<br>Mem:             3          1          1          0          0          0<br>-/+ buffers/cache:          0          2<br>Swap:            3          0          3<br>如果你想查看所有内存的汇总，请使用-t选项，使用这个选项会在输出中加一个汇总行</p>
+</blockquote>
+<p>ramesh@ramesh-laptop:~&gt; free -t<br>             total       used       free     shared    buffers     cached<br>Mem:       3566408    1592148    1974260          0     204260     912556<br>-/+ buffers/cache:     475332    3091076<br>Swap:      4000176          0    4000176<br>Total:     7566584    1592148    5974436</p>
+<ol>
+<li>top<br>top命令会显示当前系统中占用资源最多的一些进程（默认以CPU占用率排序）如果你想改变排序方式，可以在结果列表中点击O（大写字母O）会显示所有可用于排序的列，这个时候你就可以选择你想排序的列</li>
+</ol>
+<p>Current Sort Field:  P  for window 1:Def<br>Select sort field via field letter, type any other key to return</p>
+<p>  a: PID        = Process Id              v: nDRT       = Dirty Pages count<br>  d: UID        = User Id                 y: WCHAN      = Sleeping in Function<br>  e: USER       = User Name               z: Flags      = Task Flags<br>  ……..<br>如果只想显示某个特定用户的进程，可以使用-u选项</p>
+<blockquote>
+<p>top -u oracle<br>更多示例：Can You Top This? 15 Practical Linux Top Command Examples</p>
+</blockquote>
+<ol>
+<li>df<br>显示文件系统的磁盘使用情况，默认情况下df -k 将以字节为单位输出磁盘的使用量</li>
+</ol>
+<blockquote>
+<p>df -k<br>Filesystem           1K-blocks      Used Available Use% Mounted on<br>/dev/sda1             29530400   3233104  24797232  12% /<br>/dev/sda2            120367992  50171596  64082060  44% /home<br>使用-h选项可以以更符合阅读习惯的方式显示磁盘使用量</p>
+<p>df -h<br>Filesystem                  Size   Used  Avail Capacity  iused      ifree %iused  Mounted on<br>/dev/disk0s2               232Gi   84Gi  148Gi    37% 21998562   38864868   36%   /<br>devfs                      187Ki  187Ki    0Bi   100%      648          0  100%   /dev<br>map -hosts                   0Bi    0Bi    0Bi   100%        0          0  100%   /net<br>map auto_home                0Bi    0Bi    0Bi   100%        0          0  100%   /home<br>/dev/disk0s4               466Gi   45Gi  421Gi    10%   112774  440997174    0%   /Volumes/BOOTCAMP<br>//app@izenesoft.cn/public  2.7Ti  1.3Ti  1.4Ti    48%        0 18446744073709551615    0%   /Volumes/public<br>使用-T选项显示文件系统类型</p>
+<p>df -T<br>Filesystem    Type   1K-blocks      Used Available Use% Mounted on<br>/dev/sda1     ext4    29530400   3233120  24797216  12% /<br>/dev/sda2     ext4   120367992  50171596  64082060  44% /home</p>
+<ol>
+<li>kill<br>kill用于终止一个进程。一般我们会先用ps -ef查找某个进程得到它的进程号，然后再使用kill -9 进程号终止该进程。你还可以使用killall、pkill、xkill来终止进程</li>
+</ol>
+<p>ps -ef | grep vim<br>ramesh    7243  7222  9 22:43 pts/2    00:00:00 vim</p>
+<p>kill -9 7243<br>更多示例：4 Ways to Kill a Process – kill, killall, pkill, xkill</p>
+</blockquote>
+<ol>
+<li>rm<br>删除文件前先确认</li>
+</ol>
+<blockquote>
+<p>rm -i filename.txt<br>在文件名中使用shell的元字符会非常有用。删除文件前先打印文件名并进行确认</p>
+<p>rm -i file*<br>递归删除文件夹下所有文件，并删除该文件夹</p>
+<p>rm -r example</p>
+<ol>
+<li>cp<br>拷贝文件1到文件2，并保持文件的权限、属主和时间戳</li>
+</ol>
+<p>cp -p file1 file2<br>拷贝file1到file2，如果file2存在会提示是否覆盖</p>
+<p>cp -i file1 file2</p>
+<ol>
+<li>mv<br>将文件名file1重命名为file2，如果file2存在则提示是否覆盖</li>
+</ol>
+<p>mv -i file1 file2<br>注意如果使用-f选项则不会进行提示</p>
+</blockquote>
+<p>-v会输出重命名的过程，当文件名中包含通配符时，这个选项会非常方便</p>
+<blockquote>
+<p>mv -v file1 file2</p>
+<ol>
+<li>cat<br>你可以一次查看多个文件的内容，下面的命令会先打印file1的内容，然后打印file2的内容</li>
+</ol>
+<p>cat file1 file2<br>-n命令可以在每行的前面加上行号</p>
+<p>cat -n /etc/logrotate.conf<br>    1    /var/log/btmp {<br>    2        missingok<br>    3        monthly<br>    4        create 0660 root utmp<br>    5        rotate 1<br>    6    }</p>
+<ol>
+<li>mount<br>如果要挂载一个文件系统，需要先创建一个目录，然后将这个文件系统挂载到这个目录上</li>
+</ol>
+</blockquote>
+<h1 id="mkdir-u01"><a href="#mkdir-u01" class="headerlink" title="mkdir /u01"></a>mkdir /u01</h1><h1 id="mount-dev-sdb1-u01"><a href="#mount-dev-sdb1-u01" class="headerlink" title="mount /dev/sdb1 /u01"></a>mount /dev/sdb1 /u01</h1><p>也可以把它添加到fstab中进行自动挂载，这样任何时候系统重启的时候，文件系统都会被加载</p>
+<p>/dev/sdb1 /u01 ext2 defaults 0 2</p>
+<ol>
+<li>chmod<br>chmod用于改变文件和目录的权限</li>
+</ol>
+<p>给指定文件的属主和属组所有权限(包括读、写、执行)</p>
+<blockquote>
+<p>chmod ug+rwx file.txt<br>删除指定文件的属组的所有权限</p>
+<p>chmod g-rwx file.txt<br>修改目录的权限，以及递归修改目录下面所有文件和子目录的权限</p>
+<p>chmod -R ug+rwx file.txt<br>更多示例：7 Chmod Command Examples for Beginners</p>
+</blockquote>
+<ol>
+<li>chown<br>chown用于改变文件属主和属组</li>
+</ol>
+<p>同时将某个文件的属主改为oracle，属组改为db</p>
+<blockquote>
+<p>chown oracle:dba dbora.sh<br>使用-R选项对目录和目录下的文件进行递归修改</p>
+<p>chown -R oracle:dba /home/oracle</p>
+<ol>
+<li>passwd<br>passwd用于在命令行修改密码，使用这个命令会要求你先输入旧密码，然后输入新密码</li>
+</ol>
+<p>passwd<br>超级用户可以用这个命令修改其他用户的密码，这个时候不需要输入用户的密码</p>
+</blockquote>
+<h1 id="passwd-USERNAME"><a href="#passwd-USERNAME" class="headerlink" title="passwd USERNAME"></a>passwd USERNAME</h1><p>passwd还可以删除某个用户的密码，这个命令只有root用户才能操作，删除密码后，这个用户不需要输入密码就可以登录到系统</p>
+<h1 id="passwd-d-USERNAME"><a href="#passwd-d-USERNAME" class="headerlink" title="passwd -d USERNAME"></a>passwd -d USERNAME</h1><ol>
+<li>mkdir<br>在home目录下创建一个名为temp的目录</li>
+</ol>
+<blockquote>
+<p>mkdir ~/temp<br>使用-p选项可以创建一个路径上所有不存在的目录</p>
+<p>mkdir -p dir1/dir2/dir3/dir4/</p>
+<ol>
+<li>ifconfig<br>ifconfig用于查看和配置Linux系统的网络接口</li>
+</ol>
+</blockquote>
+<p>查看所有网络接口及其状态</p>
+<blockquote>
+<p>ifconfig -a<br>使用up和down命令启动或停止某个接口</p>
+<p>ifconfig eth0 up</p>
+<p>ifconfig eth0 down<br>更多示例：Ifconfig: 7 Examples To Configure Network Interface</p>
+</blockquote>
+<ol>
+<li>uname<br>uname可以显示一些重要的系统信息，例如内核名称、主机名、内核版本号、处理器类型之类的信息</li>
+</ol>
+<blockquote>
+<p>uname -a<br>Linux john-laptop 2.6.32-24-generic #41-Ubuntu SMP Thu Aug 19 01:12:52 UTC 2010 i686 GNU/Linux</p>
+<ol>
+<li>whereis<br>当你不知道某个命令的位置时可以使用whereis命令，下面使用whereis查找ls的位置<br>whereis ls<br>ls: /bin/ls /usr/share/man/man1/ls.1.gz /usr/share/man/man1p/ls.1p.gz<br>当你想查找某个可执行程序的位置，但这个程序又不在whereis的默认目录下，你可以使用-B选项，并指定目录作为这个选项的参数。下面的命令在/tmp目录下查找lsmk命令<br>whereis -u -B /tmp -f lsmk<br>lsmk: /tmp/lsmk</li>
+<li>whatis<br>wathis显示某个命令的描述信息</li>
+</ol>
+<p>whatis ls<br>ls        (1)  - list directory contents</p>
+<p>whatis ifconfig<br>ifconfig (8)         - configure a network interface</p>
+<ol>
+<li>locate<br>locate命名可以显示某个指定文件（或一组文件）的路径，它会使用由updatedb创建的数据库</li>
+</ol>
+</blockquote>
+<p>下面的命令会显示系统中所有包含crontab字符串的文件</p>
+<blockquote>
+<p>locate crontab<br>/etc/anacrontab<br>/etc/crontab<br>/usr/bin/crontab<br>/usr/share/doc/cron/examples/crontab2english.pl.gz<br>/usr/share/man/man1/crontab.1.gz<br>/usr/share/man/man5/anacrontab.5.gz<br>/usr/share/man/man5/crontab.5.gz<br>/usr/share/vim/vim72/syntax/crontab.vim</p>
+<ol>
+<li>man<br>显示某个命令的man页面</li>
+</ol>
+<p>man crontab<br>有些命令可能会有多个man页面，每个man页面对应一种命令类型</p>
+<p>man SECTION-NUMBER commandname<br>man页面一般可以分为8种命令类型</p>
+</blockquote>
+<p>用户命令<br>系统调用<br>c库函数<br>设备与网络接口<br>文件格式<br>游戏与屏保<br>环境、表、宏<br>系统管理员命令和后台运行命令<br>例如，我们执行whatis crontab，你可以看到crontab有两个命令类型1和5，所以我们可以通过下面的命令查看命令类型5的man页面</p>
+<blockquote>
+<p>whatis crontab<br>crontab (1)          - maintain crontab files for individual users (V3)<br>crontab (5)          - tables for driving cron</p>
+<p>man 5 crontab</p>
+<ol>
+<li>tail<br>tail命令默认显示文件最后的10行文本</li>
+</ol>
+<p>tail filename.txt<br>你可以使用-n选项指定要显示的行数</p>
+<p>tail -n N filename.txt<br>你也可以使用-f选项进行实时查看，这个命令执行后会等待，如果有新行添加到文件尾部，它会继续输出新的行，在查看日志时这个选项会非常有用。你可以通过CTRL-C终止命令的执行</p>
+<p>tail -f log-file<br>更多示例：3 Methods To View tail -f output of Multiple Log Files in One Terminal</p>
+</blockquote>
+<ol>
+<li>less<br>这个命名可以在不加载整个文件的前提下显示文件内容，在查看大型日志文件的时候这个命令会非常有用</li>
+</ol>
+<blockquote>
+<p>less huge-log-file.log<br>当你用less命令打开某个文件时，下面两个按键会给你带来很多帮助，他们用于向前和向后滚屏</p>
+</blockquote>
+<p>CTRL+F – forward one window<br>CTRL+B – backward one window<br>更多示例：Unix Less Command: 10 Tips for Effective Navigation</p>
+<ol>
+<li>su<br>su命令用于切换用户账号，超级用户使用这个命令可以切换到任何其他用户而不用输入密码</li>
+</ol>
+<blockquote>
+<p>su - USERNAME<br>用另外一个用户名执行一个命令下面的示例中用户john使用raj用户名执行ls命令，执行完后返回john的账号</p>
+</blockquote>
+<p>[john@dev-server]&gt; su - raj -c ‘ls’</p>
+<p>[john@dev-server]&gt;<br>用指定用户登录，并且使用指定的shell程序，而不用默认的</p>
+<blockquote>
+<p>su -s ‘SHELLNAME’ USERNAME</p>
+<ol>
+<li>mysql<br>mysql可能是Linux上使用最广泛的数据库，即使你没有在你的服务器上安装mysql，你也可以使用mysql客户端连接到远程的mysql服务器</li>
+</ol>
+</blockquote>
+<p>连接一个远程数据库，需要输入密码</p>
+<blockquote>
+<p>mysql -u root -p -h 192.168.1.2<br>连接本地数据库</p>
+<p>mysql -u root -p<br>你也可以在命令行中输入数据库密码，只需要在-p后面加上密码作为参数，可以直接写在p后面而不用加空格</p>
+</blockquote>
+<ol>
+<li>yum<br>使用yum安装apache</li>
+</ol>
+<blockquote>
+<p>yum install httpd<br>更新apache</p>
+<p>yum update httpd<br>卸载/删除apache</p>
+<p>yum remove httpd</p>
+<ol>
+<li>rpm<br>使用rpm安装apache</li>
+</ol>
+</blockquote>
+<h1 id="rpm-ivh-httpd-2-2-3-22-0-1-el5-i386-rpm"><a href="#rpm-ivh-httpd-2-2-3-22-0-1-el5-i386-rpm" class="headerlink" title="rpm -ivh httpd-2.2.3-22.0.1.el5.i386.rpm"></a>rpm -ivh httpd-2.2.3-22.0.1.el5.i386.rpm</h1><p>更新apache</p>
+<h1 id="rpm-uvh-httpd-2-2-3-22-0-1-el5-i386-rpm"><a href="#rpm-uvh-httpd-2-2-3-22-0-1-el5-i386-rpm" class="headerlink" title="rpm -uvh httpd-2.2.3-22.0.1.el5.i386.rpm"></a>rpm -uvh httpd-2.2.3-22.0.1.el5.i386.rpm</h1><p>卸载/删除apache</p>
+<h1 id="rpm-ev-httpd"><a href="#rpm-ev-httpd" class="headerlink" title="rpm -ev httpd"></a>rpm -ev httpd</h1><p>更多示例：RPM Command: 15 Examples to Install, Uninstall, Upgrade, Query RPM Packages</p>
+<ol>
+<li>ping<br>ping一个远程主机，只发5个数据包</li>
+</ol>
+<blockquote>
+<p>ping -c 5 gmail.com<br>更多示例：Ping Tutorial: 15 Effective Ping Command Examples</p>
+</blockquote>
+<ol>
+<li>date<br>设置系统日期</li>
+</ol>
+<h1 id="date-s-“01-31-2010-23-59-53”"><a href="#date-s-“01-31-2010-23-59-53”" class="headerlink" title="date -s “01/31/2010 23:59:53”"></a>date -s “01/31/2010 23:59:53”</h1><p>当你修改了系统时间，你需要同步硬件时间和系统时间</p>
+<h1 id="hwclock-–systohc"><a href="#hwclock-–systohc" class="headerlink" title="hwclock –systohc"></a>hwclock –systohc</h1><h1 id="hwclock-–systohc-–utc"><a href="#hwclock-–systohc-–utc" class="headerlink" title="hwclock –systohc –utc"></a>hwclock –systohc –utc</h1><ol>
+<li>wget<br>使用wget从网上下载软件、音乐、视频</li>
+</ol>
+<blockquote>
+<p>wget <a href="http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-3.2.1.tar.gz" target="_blank" rel="external">http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-3.2.1.tar.gz</a><br>下载文件并以指定的文件名保存文件</p>
+<p>wget -O taglist.zip <a href="http://www.vim.org/scripts/download_script.php?src_id=7701" target="_blank" rel="external">http://www.vim.org/scripts/download_script.php?src_id=7701</a><br>更多示例：The Ultimate Wget Download Guide With 15 Awesome Examples</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you !<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/yws.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">常用命令</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/树//" class="article-tag-list-link color2">树</a>
+        			<a href="/categories/linux基础//" class="article-tag-list-link color3">linux基础</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yws.fun/2017/12/03/linux/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/11/29/designPattern/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">设计模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <!-- UY BEGIN -->
+<div id="uyan_frame"></div>
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2149557"></script>
+<!-- UY END -->
+
+  
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://yws.fun/2017/12/03/linux/", 
+    sourceId: "linux",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -246,10 +720,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
