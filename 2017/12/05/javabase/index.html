@@ -23,7 +23,9 @@
 <meta property="og:image" content="https://yws.fun/2017/12/05/javabase/java5.png">
 <meta property="og:image" content="https://yws.fun/2017/12/05/javabase/java6.jpg">
 <meta property="og:image" content="https://yws.fun/2017/12/05/javabase/java7.png">
-<meta property="og:updated_time" content="2017-12-07T15:53:54.690Z">
+<meta property="og:image" content="https://yws.fun/2017/12/05/javabase/java8.png">
+<meta property="og:image" content="https://yws.fun/2017/12/05/javabase/java9.jpg">
+<meta property="og:updated_time" content="2017-12-09T09:30:21.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础整理">
 <meta name="twitter:description" content="一、基础语法部分">
@@ -287,6 +289,79 @@
 <blockquote>
 <p>如：class MyException extends Exception{<br>}</p>
 </blockquote>
+<p>—————– 面向对象————–<br>一、继承<br>父类子类继承父类的特征行为，使得子类对象具有父类的实例域和方法，或者是子类继承父类的方法，使得子类具有父类相同的行为。<br>子类可以继承父类的非private方法，单根继承；<br>extends单根继承，implements可以继承多个接口；<br><strong>关于super和this、final</strong><br>super:通过super关键字，来实现对父类成员的访问，用来引用当前对象的父类。<br>this：指向自己的引用。<br>final：把类定义为不能继承的，即最终的类，修饰方法，不能被子类重写；实例变量也可以被定义为final，不能被修改，被声明为final类的方法自动地声明为final；<br><strong>构造器</strong><br>子类不能继承父类的构造器、构造方法、构造函数，但是如果父类的构造带有参数的，则必须在子类的构造其器中显示地通过super关键字调用父类的构造器，并具有参数列表；<br>如果父类中有无参构造器，则系统会默认使用super关键字调用父类的无参构造器；</p>
+<p>二、重写(Override)和 重载(Overload)<br>重写：子类对继承父类后，对父类的方法进行重写实现，<strong>返回值和参数都不能改变，并且不能抛出新鲜的异常或者是比父类宽泛的异常</strong>，返回类型必须一致，！<strong>super</strong>：子类中需要调用父类的重写方法时，使用super关键字调用；<br>重载：一个类里边，方法名字相同，而参数不同，返回类型也可以不同，每个重载方法的参数必须不同，常用于构造器的重载；</p>
+<p>三、多态<br>同一个行为具有多个不同表现形式或形态的能力，同一个接口，使用不同的实例，执行不同的操作；<br>多态存在的必要的条件：继承、重写、父类引用指向子类对象：</p>
+<blockquote>
+<p>Parent p = new child()<br>super：子类想要调用父类中被重写的方法时，必须使用super显式调用；<br>多态实现的方式:重写、接口、抽象类和方法；</p>
+</blockquote>
+<p>四、抽象类<br>抽象类不能被实例化，必须被继承才能使用；</p>
+<blockquote>
+<p>public abstract class Test{}</p>
+<p>假如Test1 继承 Test,则Test t = new Test1()</p>
+</blockquote>
+<p>抽象方法：只包含抽象的方法，没有方法体，具体实现由其子类实现；</p>
+<blockquote>
+<p>public abstract int num();</p>
+</blockquote>
+<p><strong>注</strong>：一个类中有抽象的方法，那么该类就必须是抽象的；任何子类必须重写父类的抽象方法，或者声明自身为抽象类；</p>
+<p>五、封装<br>将抽象性的函数接口实现细节部分包装、隐藏起来的方法，只用修改实现代码，而不需要修改调用代码；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public class Person&#123;</div><div class="line">  //私有封装</div><div class="line">  private String name;</div><div class="line">  private int age;</div><div class="line"></div><div class="line">  //外部公共方法</div><div class="line">  public int getAge(int age)&#123;</div><div class="line">    return age;</div><div class="line">  &#125;</div><div class="line">  public void setAge(int age)&#123;</div><div class="line">    this.age = age;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  //调用</div><div class="line">  Person person = new Person();</div><div class="line">  person.setAge(&quot;23&quot;);</div><div class="line">  System.out.println(&quot;age:&quot; + person.getAge());</div><div class="line">输出：age:23;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>六、接口<br>可以理解为抽象类型的结合，定义了一系列抽象方法，用interface声明，一个类通过继承使用接口的方法，除非接口的实现类被定义为了抽象的类，否则要实现接口中的所有方法；</p>
+<blockquote>
+<p>任何接口的方法被隐式地制定为public abstract，其他都会被报错；接口中的变量只能被制定为public static final的方式；接口中不能包含静态代码块及静态方法；一个接口可以继承另一个接口；</p>
+</blockquote>
+<p>接口继承<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">public interface Sports</div><div class="line">&#123;</div><div class="line">   public void setHomeTeam(String name);</div><div class="line">   public void setVisitingTeam(String name);</div><div class="line">&#125;</div><div class="line"></div><div class="line">public interface Football extends Sports</div><div class="line">&#123;</div><div class="line">  public void setHomeTeam(String name);</div><div class="line">  public void setVisitingTeam(String name);</div><div class="line">  、、、</div><div class="line">&#125;</div><div class="line"></div><div class="line">public interface Hockey extends Sports</div><div class="line">&#123;</div><div class="line">  public void setHomeTeam(String name);</div><div class="line">  public void setVisitingTeam(String name);</div><div class="line">  、、、</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>接口中的多继承<br>public interface Test extends Test1,Test2</p>
+</blockquote>
+<p>抽象类和接口的区别:</p>
+<ol>
+<li>抽象类中的方法可以有方法体，就是能实现方法的具体功能，但是接口中的方法不行。</li>
+<li>抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是 public static final 类型的。</li>
+<li>接口中不能含有静态代码块以及静态方法(用 static 修饰的方法)，而抽象类是可以有静态代码块和静态方法。</li>
+<li>一个类只能继承一个抽象类，而一个类却可以实现多个接口。</li>
+</ol>
+<p>7、包</p>
+<blockquote>
+<p>package pkg1;<br>import package1[.package2…]; //明确使用哪个包</p>
+</blockquote>
+<p>—————Java高级特性————-<br>一、框架集合<br>集合框架示意</p>
+<p><img src="/2017/12/05/javabase/java8.png" alt="集合"></p>
+<p>Set和List的区别</p>
+<ol>
+<li>Set 接口实例存储的是无序的，不重复的数据。List 接口实例存储的是有序的，可以重复的元素。</li>
+<li>Set检索效率低下，删除和插入效率高，插入和删除不会引起元素位置改变 &lt;实现类有HashSet,TreeSet&gt;。</li>
+<li>List和数组类似，可以动态增长，根据实际存储的数据的长度自动增长List的长度。查找元素效率高，插入删除效率低，因为会引起其他元素位置改变 &lt;实现类有ArrayList,LinkedList,Vector&gt; 。</li>
+</ol>
+<p>二、泛型<br>可以写一个泛型方法，该方法在调用时可以接收不同类型的参数。根据传递给泛型方法的参数类型，编译器适当地处理每一个方法调用。<br>定义泛型方法的规则：<br>所有泛型方法声明都有一个类型参数声明部分（由尖括号分隔），该类型参数声明部分在方法返回类型之前（在下面例子中的<e>）。<br>每一个类型参数声明部分包含一个或多个类型参数，参数间用逗号隔开。一个泛型参数，也被称为一个类型变量，是用于指定一个泛型类型名称的标识符。<br>类型参数能被用来声明返回值类型，并且能作为泛型方法得到的实际参数类型的占位符。<br>泛型方法体的声明和其他方法一样。注意类型参数只能代表引用型类型，不能是原始类型（像int,double,char的等）。</e></p>
+<blockquote>
+<p>List &lt;String泛 name = new ArrayList&lt;String泛();</p>
+</blockquote>
+<p>也可用于通用符’？’表示，’？’可以是String,Integer等；</p>
+<blockquote>
+<p> public static void getData(List&lt;?&gt; data) {<br>      System.out.println(“data :” + data.get(0));<br>   }</p>
+</blockquote>
+<p>二、多线程<br>Java 给多线程编程提供了内置的支持。一个多线程程序包含两个或多个能并发运行的部分。程序的每一部分都称作一个线程，并且每个线程定义了一个独立的执行路径。<br>多线程是多任务的一种特别的形式，但多线程使用了更小的资源开销。<br>这里定义和线程相关的另一个术语 - 进程：一个进程包括由操作系统分配的内存空间，包含一个或多个线程。一个线程不能独立的存在，它必须是进程的一部分。一个进程一直运行，直到所有的非守候线程都结束运行后才能结束。<br>多线程能满足程序员编写高效率的程序来达到充分利用 CPU 的目的。<br><img src="/2017/12/05/javabase/java9.jpg" alt=""></p>
+<p><strong>新建状态</strong>: 使用 new 关键字和 Thread 类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态直到程序 start() 这个线程。</p>
+<p><strong>就绪状态</strong>:当线程对象调用了start()方法之后，该线程就进入就绪状态。就绪状态的线程处于就绪队列中，要等待JVM里线程调度器的调度。</p>
+<p><strong>运行状态</strong>:如果就绪状态的线程获取 CPU 资源，就可以执行 run()，此时线程便处于运行状态。处于运行状态的线程最为复杂，它可以变为阻塞状态、就绪状态和死亡状态。</p>
+<p><strong>阻塞状态</strong>:如果一个线程执行了sleep（睡眠）、suspend（挂起）等方法，失去所占用资源之后，该线程就从运行状态进入阻塞状态。在睡眠时间已到或获得设备资源后可以重新进入就绪状态。可以分为三种：<br>等待阻塞：运行状态中的线程执行 wait() 方法，使线程进入到等待阻塞状态。<br><strong>同步阻塞</strong>：线程在获取 synchronized 同步锁失败(因为同步锁被其他线程占用)。<br><strong>其他阻塞</strong>：通过调用线程的 sleep() 或 join() 发出了 I/O 请求时，线程就会进入到阻塞状态。当sleep() 状态超时，join() 等待线程终止或超时，或者 I/O 处理完毕，线程重新转入就绪状态。</p>
+<p><strong>死亡状态</strong>:一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。</p>
+<p>线程的优先级<br>范围为1-10，默认为5，可以手动地改变线程的优先级，优先级高并不一定代表先被执行，而是最大可能地优先执行；<br>创建一个线程<br>Java 提供了三种创建线程的方法：<br>1、通过实现 Runnable 接口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">// 实现Runnable接口</div><div class="line">class RunnableDemo implements Runnable &#123;</div><div class="line">   private Thread t;</div><div class="line">   private String threadName;</div><div class="line"></div><div class="line">   RunnableDemo( String name) &#123;</div><div class="line">      threadName = name;</div><div class="line">      System.out.println(&quot;Creating &quot; +  threadName );</div><div class="line">   &#125;</div><div class="line">// 调用run方法</div><div class="line">   public void run() &#123;</div><div class="line">      System.out.println(&quot;Running &quot; +  threadName );</div><div class="line">      try &#123;</div><div class="line">         for(int i = 4; i &gt; 0; i--) &#123;</div><div class="line">            System.out.println(&quot;Thread: &quot; + threadName + &quot;, &quot; + i);</div><div class="line">            // 让线程睡眠一会</div><div class="line">            Thread.sleep(50);</div><div class="line">         &#125;</div><div class="line">      &#125;catch (InterruptedException e) &#123;</div><div class="line">         System.out.println(&quot;Thread &quot; +  threadName + &quot; interrupted.&quot;);</div><div class="line">      &#125;</div><div class="line">      System.out.println(&quot;Thread &quot; +  threadName + &quot; exiting.&quot;);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">// 调用start()方法后，线程开始执行</div><div class="line">   public void start () &#123;</div><div class="line">      System.out.println(&quot;Starting &quot; +  threadName );</div><div class="line">      if (t == null) &#123;</div><div class="line">         t = new Thread (this, threadName);</div><div class="line">         t.start ();</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class TestThread &#123;</div><div class="line"></div><div class="line">   public static void main(String args[]) &#123;</div><div class="line">      RunnableDemo R = new RunnableDemo( &quot;Thread-1&quot;);</div><div class="line">      R1.start();</div><div class="line">   &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2、通过继承 Thread 类本身<br>创建一个线程的第二种方法是创建一个新的类，该类继承 Thread 类，然后创建一个该类的实例。<br>继承类必须重写 run() 方法，该方法是新线程的入口点。它也必须调用 start() 方法才能执行。<br>该方法尽管被列为一种多线程实现方式，但是本质上也是实现了 Runnable 接口的一个实例。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">class ThreadDemo extends Thread &#123;</div><div class="line">   private Thread t;</div><div class="line">   private String threadName;</div><div class="line"></div><div class="line">   ThreadDemo( String name) &#123;</div><div class="line">      threadName = name;</div><div class="line">      System.out.println(&quot;Creating &quot; +  threadName );</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   public void run() &#123;</div><div class="line">      System.out.println(&quot;Running &quot; +  threadName );</div><div class="line">      try &#123;</div><div class="line">         for(int i = 4; i &gt; 0; i--) &#123;</div><div class="line">            System.out.println(&quot;Thread: &quot; + threadName + &quot;, &quot; + i);</div><div class="line">            // 让线程睡眠一会</div><div class="line">            Thread.sleep(50);</div><div class="line">         &#125;</div><div class="line">      &#125;catch (InterruptedException e) &#123;</div><div class="line">         System.out.println(&quot;Thread &quot; +  threadName + &quot; interrupted.&quot;);</div><div class="line">      &#125;</div><div class="line">      System.out.println(&quot;Thread &quot; +  threadName + &quot; exiting.&quot;);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   public void start () &#123;</div><div class="line">      System.out.println(&quot;Starting &quot; +  threadName );</div><div class="line">      if (t == null) &#123;</div><div class="line">         t = new Thread (this, threadName);</div><div class="line">         t.start ();</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class TestThread &#123;</div><div class="line"></div><div class="line">   public static void main(String args[]) &#123;</div><div class="line">      ThreadDemo T = new ThreadDemo( &quot;Thread-1&quot;);</div><div class="line">      T1.start();</div><div class="line">   &#125;   </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3、通过 Callable 和 Future 创建线程</p>
+<ol>
+<li>创建 Callable 接口的实现类，并实现 call() 方法，该 call() 方法将作为线程执行体，并且有返回值。</li>
+<li>创建 Callable 实现类的实例，使用 FutureTask 类来包装 Callable 对象，该 FutureTask 对象封装了该 Callable 对象的 call() 方法的返回值。</li>
+<li>使用 FutureTask 对象作为 Thread 对象的 target 创建并启动新线程。</li>
+<li>调用 FutureTask 对象的 get() 方法来获得子线程执行结束后的返回值。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">public class CallableThreadTest implements Callable&lt;Integer&gt; &#123;</div><div class="line">    public static void main(String[] args)  </div><div class="line">    &#123;  </div><div class="line">        CallableThreadTest ctt = new CallableThreadTest();  </div><div class="line">        FutureTask&lt;Integer&gt; ft = new FutureTask&lt;&gt;(ctt);  </div><div class="line">        for(int i = 0;i &lt; 100;i++)  </div><div class="line">        &#123;  </div><div class="line">            System.out.println(Thread.currentThread().getName()+&quot; 的循环变量i的值&quot;+i);  </div><div class="line">            if(i==20)  </div><div class="line">            &#123;  </div><div class="line">                new Thread(ft,&quot;有返回值的线程&quot;).start();  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">        try  </div><div class="line">        &#123;  </div><div class="line">            System.out.println(&quot;子线程的返回值：&quot;+ft.get());  </div><div class="line">        &#125; catch (InterruptedException e)  </div><div class="line">        &#123;  </div><div class="line">            e.printStackTrace();  </div><div class="line">        &#125; catch (ExecutionException e)  </div><div class="line">        &#123;  </div><div class="line">            e.printStackTrace();  </div><div class="line">        &#125;  </div><div class="line"></div><div class="line">    &#125;</div><div class="line">    @Override  </div><div class="line">    public Integer call() throws Exception  </div><div class="line">    &#123;  </div><div class="line">        int i = 0;  </div><div class="line">        for(;i&lt;100;i++)  </div><div class="line">        &#123;  </div><div class="line">            System.out.println(Thread.currentThread().getName()+&quot; &quot;+i);  </div><div class="line">        &#125;  </div><div class="line">        return i;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>对比：</p>
+<ol>
+<li>采用实现 Runnable、Callable 接口的方式创见多线程时，线程类只是实现了 Runnable 接口或 Callable 接口，还可以继承其他类。</li>
+<li>使用继承 Thread 类的方式创建多线程时，编写简单，如果需要访问当前线程，则无需使用 Thread.currentThread() 方法，直接使用 this 即可获得当前线程。</li>
+</ol>
 
       
 
@@ -597,11 +672,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础部署</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础部署</a>
               </li>
              
               <li class="article-tag-list-item">
