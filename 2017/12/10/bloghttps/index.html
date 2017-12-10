@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://yws.fun/bloghttps/img2.png">
 <meta property="og:image" content="https://yws.fun/bloghttps/img3.png">
 <meta property="og:image" content="https://yws.fun/bloghttps/img4.png">
-<meta property="og:updated_time" content="2017-12-10T15:05:41.622Z">
+<meta property="og:updated_time" content="2017-12-10T15:09:18.275Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Cloudflare为hexo博客+github+域名添加https安全协议">
 <meta name="twitter:description" content="hexo博客与github绑定的时候，由于github博客目前是静态页面，为http访问，而目前大多数浏览器都已经替换为https访问，访问打开http页面时会自动阻拦，并提醒不安全，降低了博客的外部访问。">
@@ -185,15 +185,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>hexo博客与github绑定的时候，由于github博客目前是静态页面，为http访问，而目前大多数浏览器都已经替换为https访问，访问打开http页面时会自动阻拦，并提醒不安全，降低了博客的外部访问。<br><a id="more"></a><br>以下利用Cloudflare，其原理是访问的时候是https，其原理是用户在访问的时候将http转为https,而在呈现页面的时候又可以http的方式进行展示，成功拿到github的博客地址；<br>一、在Cloudflare配置<br>1.在官网注册：<a href="https://www.cloudflare.com/" target="_blank" rel="external">https://www.cloudflare.com/</a><br>2.具体过程直接看这里的官网视频<br>网速的原因也可直接访问：<a href="https://www.cloudflare.com/video/cloudflare-setup.mp4" target="_blank" rel="external">https://www.cloudflare.com/video/cloudflare-setup.mp4</a></p>
-<p>3.在上述的教程中，在你的域名控制台，将DNS服务器改为Cloudflare中显示的另个，会有两个逐一替换即可；</p>
-<p><img src="/bloghttps/img1.png" alt=""></p>
-<p>4.在Cloudflare，Crypto选项下，选择SSL为Full,并将下边的Always use https</p>
-<p><img src="/bloghttps/img2.png" alt=""></p>
-<p>5.在Overview中，Status: Active，则代表配置成功，具体可能需要等一个小时左右，时间不等；</p>
-<p><img src="/bloghttps/img3.png" alt=""></p>
-<p>6.再次访问博客，可以看到已经变为安全连接，https访问,不会再收到浏览器的阻拦；</p>
-<p><img src="/bloghttps/img4.png" alt=""></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>hexo博客与github绑定的时候，由于github博客目前是静态页面，为http访问，而目前大多数浏览器都已经替换为https访问，访问打开http页面时会自动阻拦，并提醒不安全，降低了博客的外部访问。<br><a id="more"></a><br>以下利用Cloudflare，其原理是访问的时候是https，其原理是用户在访问的时候将http转为https,而在呈现页面的时候又可以http的方式进行展示，成功拿到github的博客地址；<br>一、在Cloudflare配置<br>1.在官网注册：<a href="https://www.cloudflare.com/" target="_blank" rel="external">https://www.cloudflare.com/</a><br>2.具体过程直接看这里的官网视频<br>网速的原因也可直接访问：<br><a href="https://www.cloudflare.com/video/cloudflare-setup.mp4" target="_blank" rel="external">https://www.cloudflare.com/video/cloudflare-setup.mp4</a></p>
+<p>3.在上述的教程中，在你的域名控制台，将DNS服务器改为Cloudflare中显示的另个，会有两个DNS服务主机码，逐一替换即可；<br><img src="/bloghttps/img1.png" alt=""><br>4.在Cloudflare，Crypto选项下，选择SSL为Full,并将下边的Always use https<br><img src="/bloghttps/img2.png" alt=""><br>5.在Overview中，Status: Active，则代表配置成功，具体可能需要等一个小时左右，时间不等；<br><img src="/bloghttps/img3.png" alt=""><br>6.再次访问博客，可以看到已经变为安全连接，https访问,不会再收到浏览器的阻拦；<br><img src="/bloghttps/img4.png" alt=""></p>
 
       
 
@@ -503,11 +496,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
