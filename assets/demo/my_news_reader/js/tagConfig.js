@@ -1,4 +1,4 @@
-window.tagConfig = {
+<script src="/assets/js/APlayer.min.js"> </script>window.tagConfig = {
 	areas: {
 		cols_40_60: [{
 			width: 40,

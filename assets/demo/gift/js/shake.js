@@ -1,4 +1,4 @@
-/*
+<script src="/assets/js/APlayer.min.js"> </script>/*
  *
  * Find more about this plugin by visiting
  * http://alxgbsn.co.uk/

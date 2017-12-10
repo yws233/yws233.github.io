@@ -1,4 +1,4 @@
-function H$(i){return document.getElementById(i);}
+<script src="/assets/js/APlayer.min.js"> </script>function H$(i){return document.getElementById(i);}
 function H$$(c,p){
 	if(p) return p.getElementsByTagName(c);
 	else return document.getElementsByTagName(c);
