@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>设计模式 | yws博客</title>
+  <title>Category: 软件 系统 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。">
-<meta name="keywords" content="designPattern">
-<meta property="og:type" content="article">
-<meta property="og:title" content="设计模式">
-<meta property="og:url" content="https://yws.fun/2017/11/29/designPattern/index.html">
+  <meta name="description" content="对过去的行为说声抱歉">
+<meta name="keywords" content="Java&#x2F;python&#x2F;Android&#x2F;渴望成长...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="yws博客">
+<meta property="og:url" content="https://yws.fun/categories/软件-系统/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。">
-<meta property="og:image" content="https://yws.fun/2017/11/29/designPattern/singleton.png">
-<meta property="og:image" content="https://yws.fun/2017/11/29/designPattern/Observer.png">
-<meta property="og:updated_time" content="2017-12-03T03:42:03.672Z">
+<meta property="og:description" content="对过去的行为说声抱歉">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。">
-<meta name="twitter:image" content="https://yws.fun/2017/11/29/designPattern/singleton.png">
+<meta name="twitter:title" content="yws博客">
+<meta name="twitter:description" content="对过去的行为说声抱歉">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -163,242 +159,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-designPattern" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      设计模式
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/12/11/chrome/" class="archive-article-date">
+  	<time datetime="2017-12-11T06:40:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/12/11/chrome/">解决ubuntu中Chrome浏览器在外部无法打开及链接无法打开问题</a>
     </h1>
   
 
-        
-        <a href="/2017/11/29/designPattern/" class="archive-article-date">
-  	<time datetime="2017-11-29T14:38:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <script src="/assets/js/APlayer.min.js"> </script><p>&nbsp;&nbsp;&nbsp;&nbsp;很早就想对设计模式进行总结，因为在实际的项目过程中总是遇到，比如最常用的单例模式、MVC模式等，以此作为总结学习本文以Java语言实现，先以最常用的模式开始，逐步进行补充。<br><a id="more"></a><br>一、单例模式<br>&nbsp;&nbsp;&nbsp;&nbsp; 单例模式涉及一个单一的类，该类只负责创建自己的对象，同时还需要确保只有单个的对象被创建；这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。常用于一个全局使用类被频繁地创建与销毁，如web缓存、IO/数据库等。<br>特点：<br>&nbsp;&nbsp;&nbsp;&nbsp; 1、单例类只能有一个实例；<br>&nbsp;&nbsp;&nbsp;&nbsp; 2、单例类必须自己创建自己的唯一实例；<br>&nbsp;&nbsp;&nbsp;&nbsp; 3、单例类必须给所有其他的对象提供这一实例；<br><strong>a.实现</strong><br><img src="/2017/11/29/designPattern/singleton.png" alt="singleton"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  创建一个Singleton 类</div><div class="line">*/</div><div class="line">  public class Singleton&#123;</div><div class="line">    //创建一个Singleton 的对象</div><div class="line">    private static Singleton instance = new Singleton();</div><div class="line">    //构造函数为私有，使得该类不会被实例化</div><div class="line">    private Singleton()&#123;&#125;</div><div class="line">    //获取唯一可调用的对象</div><div class="line">    public static Singleton getInstance()&#123;</div><div class="line">      return instance;</div><div class="line">    &#125;</div><div class="line">    public void show()&#123;</div><div class="line">      System.out.println(&quot;hello singleton!&quot;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  从Singleton获取唯一对象</div><div class="line">*/</div><div class="line">public class getSingleton&#123;</div><div class="line">  public static void main(String[] args)&#123;</div><div class="line">    //获取唯一对象</div><div class="line">    Singleton object = Singleton.getInstance();</div><div class="line">    //调用方法实现</div><div class="line">    object.show();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>b.单例模式的几种实现方式</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;1.懒汉模式，线程不安全<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;懒加载，使用的时候实例化，线程不安全<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  懒汉模式</div><div class="line">*/</div><div class="line">public class Singleton&#123;</div><div class="line">  private static Singleton instance;</div><div class="line">  private static Singleton getInstance()&#123;</div><div class="line">    if(instance == null)&#123;</div><div class="line">      instance = new Singleton();</div><div class="line">    &#125;</div><div class="line">    return instance;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;2.线程安全懒汉模式<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一次调用的时候才初始化，避免了空间的浪费，必须加锁 synchronized 才能保证单例，但加锁会影响效率；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  线程安全懒汉模式</div><div class="line">*/</div><div class="line">public class Singleton&#123;</div><div class="line">    private static Singleton instance;</div><div class="line">    private Singleton()&#123;&#125;</div><div class="line">    public static synchronized Singleton getInstance()&#123;</div><div class="line">      if(instance == null)&#123;</div><div class="line">        instance = new Singleton();</div><div class="line">      &#125;</div><div class="line">      return instance;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;3.饿汉模式<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;没有加锁，执行效率高，初始就加载，造成空间的浪费；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  恶汉模式</div><div class="line">*/</div><div class="line">public class Singleton &#123;  </div><div class="line">    private static Singleton instance = new Singleton();  </div><div class="line">    private Singleton ()&#123;&#125;  </div><div class="line">    public static Singleton getInstance() &#123;  </div><div class="line">    return instance;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;4.双检锁/双重校验锁（DCL，即 double-checked locking）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采用双锁机制，安全且在多线程情况下能保持高性能;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  双检锁/双重校验锁</div><div class="line">*/</div><div class="line">public class Singleton &#123;  </div><div class="line">    private volatile static Singleton singleton;  </div><div class="line">    private Singleton ()&#123;&#125;  </div><div class="line">    public static Singleton getSingleton() &#123;  </div><div class="line">    if (singleton == null) &#123;  </div><div class="line">        synchronized (Singleton.class) &#123;  </div><div class="line">        if (singleton == null) &#123;  </div><div class="line">            singleton = new Singleton();  </div><div class="line">        &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    return singleton;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;5.登记式/静态内部类<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这种方式能达到双检锁方式一样的功效，但实现更简单。对静态域使用延迟初始化，应使用这种方式而不是双检锁方式。这种方式只适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这种方式同样利用了 classloder 机制来保证初始化 instance 时只有一个线程，它跟第 3 种方式不同的是：第 3 种方式只要 Singleton 类被装载了，那么 instance 就会被实例化（没有达到 lazy loading 效果），而这种方式是 Singleton 类被装载了，instance 不一定被初始化。因为 SingletonHolder 类没有被主动使用，只有显示通过调用 getInstance 方法时，才会显示装载 SingletonHolder 类，从而实例化 instance。想象一下，如果实例化 instance 很消耗资源，所以想让它延迟加载，另外一方面，又不希望在 Singleton 类加载时就实例化，因为不能确保 Singleton 类还可能在其他的地方被主动使用从而被加载，那么这个时候实例化 instance 显然是不合适的。这个时候，这种方式相比第 3 种方式就显得很合理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  静态内部类模式</div><div class="line">*/</div><div class="line">  public class Singleton &#123;  </div><div class="line">      private static class SingletonHolder &#123;  </div><div class="line">        private static final INSTANCE = new Singleton();  </div><div class="line">      &#125;  </div><div class="line">      private Singleton ()&#123;&#125;  </div><div class="line">      public static final Singleton getInstance() &#123;  </div><div class="line">        return SingletonHolder.INSTANCE;  </div><div class="line">      &#125;  </div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;6.枚举<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;避免多线程同步问题，而且还自动支持序列化机制，防止反序列化重新创建新的对象，绝对防止多次实例化,不能通过 reflection attack 来调用私有构造方法;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">  枚举</div><div class="line">*/</div><div class="line">    public enum Singleton &#123;  </div><div class="line">        INSTANCE;  </div><div class="line">        public void whateverMethod() &#123;  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>二、工厂模式<br>&nbsp;&nbsp;&nbsp;&nbsp; 工厂模式在创建对象的时候不对客户端暴露创建逻辑，使用一个共同的接口来指向新创建的对象，让子类实现工厂接口，并且返回的也是抽象“产品”；<br>&nbsp;&nbsp;&nbsp;&nbsp;特点：<br>&nbsp;&nbsp;&nbsp;&nbsp;1.调用者想要创建一个对象，只需要其名称就可以了；<br>&nbsp;&nbsp;&nbsp;&nbsp;2.有较好的扩展性，扩建的时候只需要增加工厂类就可以，并且屏蔽了其具体实现过程，只需要关心调用的接口；<br>&nbsp;&nbsp;&nbsp;&nbsp;3.但是每次增加都需要调用一个具体的类和对象实现工厂，增加了具体类的依赖，系统可能变得复杂；<br>其具体实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	创建一个接口</div><div class="line"> */</div><div class="line">public interface Music&#123;</div><div class="line">	void sing();</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">	创建接口的实现类</div><div class="line"> */</div><div class="line">//pop</div><div class="line">public class Pop implements Music&#123;</div><div class="line">	@Ocerride</div><div class="line">	public void sing()&#123;</div><div class="line">		System.out.println(&quot;this is pop music&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//classic</div><div class="line">public class Classic implements Music&#123;</div><div class="line">	@Ocerride</div><div class="line">	public void sing()&#123;</div><div class="line">		System.out.println(&quot;this is pop classic&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//juzz</div><div class="line">public class Juzz implements Music&#123;</div><div class="line">	@Ocerride</div><div class="line">	public void sing()&#123;</div><div class="line">		System.out.println(&quot;this is pop juzz&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">	创建一个工厂，生成相应的实体类的对象</div><div class="line"> */</div><div class="line">public class MusicFactory&#123;</div><div class="line">	//获取相应的类型对象</div><div class="line">	public Music getMusic(String musicType)&#123;</div><div class="line">		if (musicType == null) &#123;</div><div class="line">			return null;</div><div class="line">		&#125;</div><div class="line">		if (musicType.equalsIgnoreCase(&quot;pop&quot;)) &#123;</div><div class="line">			return new Pop();</div><div class="line">		&#125;</div><div class="line">		if (musicType.equalsIgnoreCase(&quot;Classic&quot;)) &#123;</div><div class="line">			return new Classic();</div><div class="line">		&#125;</div><div class="line">		if (musicType.equalsIgnoreCase(&quot;Juzz&quot;)) &#123;</div><div class="line">			return new Juzz();</div><div class="line">		&#125;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	/*</div><div class="line">		使用该工厂，获取实体类的对象信息</div><div class="line">	 */</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		MusicFactory musicFactory = new MusicFactory();</div><div class="line"></div><div class="line">		Music music1 = musicFactory.getMusic(&quot;pop&quot;);</div><div class="line">		music1.sing();</div><div class="line">		// ...</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>三、观察者模式<br>&nbsp;&nbsp;&nbsp;&nbsp; 多用于对象之间的一对多关系，当一个对象被修改的时候，则会自动通知它的依赖对象，并自动进行更新，可以降低耦合性；使用场景包括：有多个子类共有的方法，且逻辑相同，复杂的方法可以使用，当做模板方法一样。注意：防止循环引用，如果某一观察者出现问题，则可能会影响整个系统，需要大量通知耗费一定的时间；<br>&nbsp;&nbsp;&nbsp;&nbsp;实例图<br><img src="/2017/11/29/designPattern/Observer.png" alt="Observer"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div></pre></td><td class="code"><pre><div class="line">import java.util.ArrayList;</div><div class="line">import java.util.List;</div><div class="line">/*</div><div class="line">	Subject</div><div class="line"> */</div><div class="line">public class Subject&#123;</div><div class="line">	private List&lt;Obserser&gt; observers = new ArrayList&lt;Obserser&gt;();</div><div class="line">	private int state;</div><div class="line"></div><div class="line">	public int getState()&#123;</div><div class="line">		return state;</div><div class="line">	&#125;</div><div class="line">	public void setState()&#123;</div><div class="line">		this.state = state;</div><div class="line">		notifyAllObservers();</div><div class="line">	&#125;</div><div class="line">	public void attach(Observer observer)&#123;</div><div class="line">        observers.add(observer);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   public void notifyAllObservers()&#123;</div><div class="line">        for (Observer observer : observers) &#123;</div><div class="line">        	observer.update();</div><div class="line">      &#125;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">	Observer</div><div class="line"> */</div><div class="line">public abstract class Observer &#123;</div><div class="line">   protected Subject subject;</div><div class="line">   public abstract void update();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">/*  创建实体观察者类</div><div class="line">	BinaryObserver</div><div class="line">*/</div><div class="line">public class BinaryObserver extends Observer&#123;</div><div class="line"></div><div class="line">   public BinaryObserver(Subject subject)&#123;</div><div class="line">      this.subject = subject;</div><div class="line">      this.subject.attach(this);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   @Override</div><div class="line">   public void update() &#123;</div><div class="line">      System.out.println( &quot;Binary String: &quot;</div><div class="line">      + Integer.toBinaryString( subject.getState() ) );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">	OctalObserver</div><div class="line"> */</div><div class="line"></div><div class="line">public class OctalObserver extends Observer&#123;</div><div class="line"></div><div class="line">   public OctalObserver(Subject subject)&#123;</div><div class="line">      this.subject = subject;</div><div class="line">      this.subject.attach(this);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   @Override</div><div class="line">   public void update() &#123;</div><div class="line">     System.out.println( &quot;Octal String: &quot;</div><div class="line">     + Integer.toOctalString( subject.getState() ) );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">/*</div><div class="line">	HexaObserver</div><div class="line"> */</div><div class="line">public class HexaObserver extends Observer&#123;</div><div class="line"></div><div class="line">   public HexaObserver(Subject subject)&#123;</div><div class="line">      this.subject = subject;</div><div class="line">      this.subject.attach(this);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   @Override</div><div class="line">   public void update() &#123;</div><div class="line">      System.out.println( &quot;Hex String: &quot;</div><div class="line">      + Integer.toHexString( subject.getState() ).toUpperCase() );</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/*</div><div class="line">	使用 Subject 和实体观察者对象</div><div class="line"> */</div><div class="line">public class ObserverPatternDemo &#123;</div><div class="line">   public static void main(String[] args) &#123;</div><div class="line">      Subject subject = new Subject();</div><div class="line"></div><div class="line">      new HexaObserver(subject);</div><div class="line">      new OctalObserver(subject);</div><div class="line">      new BinaryObserver(subject);</div><div class="line"></div><div class="line">      System.out.println(&quot;First state change: 15&quot;);    </div><div class="line">      subject.setState(15);</div><div class="line">      System.out.println(&quot;Second state change: 10&quot;);    </div><div class="line">      subject.setState(10);</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thank you !<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/yws.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">designPattern</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记录</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/设计模式//" class="article-tag-list-link color5">设计模式</a>
+        			<a href="/categories/软件-系统//" class="article-tag-list-link color1">软件 系统</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://yws.fun/2017/11/29/designPattern/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/12/03/linux/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          linux常用命令
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/11/28/jvm/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jvm</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  <!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2149557"></script>
-<!-- UY END -->
-
+    </div></section>
   
 
- 
- <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zMjIyNi84Nzkw">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-
- 
-
-  
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "https://yws.fun/2017/11/29/designPattern/", 
-    sourceId: "designPattern",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -421,10 +246,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",

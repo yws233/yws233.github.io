@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://yws.fun/blogsslhttps/002.png">
 <meta property="og:image" content="https://yws.fun/blogsslhttps/003.png">
 <meta property="og:image" content="https://yws.fun/blogsslhttps/004.png">
-<meta property="og:updated_time" content="2017-12-10T15:43:40.438Z">
+<meta property="og:updated_time" content="2017-12-11T07:13:17.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用Cloudflare为hexo博客+github+域名添加https安全协议">
 <meta name="twitter:description" content="hexo博客与github绑定的时候，由于github博客目前是静态页面，为http访问，而目前大多数浏览器都已经替换为https访问，访问打开http页面时会自动阻拦，并提醒不安全，降低了博客的外部访问。">
@@ -185,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>hexo博客与github绑定的时候，由于github博客目前是静态页面，为http访问，而目前大多数浏览器都已经替换为https访问，访问打开http页面时会自动阻拦，并提醒不安全，降低了博客的外部访问。<br><a id="more"></a><br>以下利用Cloudflare，其原理是访问的时候是https，其原理是用户在访问的时候将http转为https,而在呈现页面的时候又可以http的方式进行展示，成功拿到github的博客地址；<br>一、在Cloudflare配置<br>1.在官网注册：<a href="https://www.cloudflare.com/" target="_blank" rel="external">https://www.cloudflare.com/</a><br>2.具体过程直接看这里的官网视频：<br>网速的原因也可直接访问：<a href="https://www.cloudflare.com/video/cloudflare-setup.mp4" target="_blank" rel="external">https://www.cloudflare.com/video/cloudflare-setup.mp4</a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>hexo博客与github绑定的时候，由于github博客目前是静态页面，为http访问，而目前大多数浏览器都已经替换为https访问，访问打开http页面时会自动阻拦，并提醒不安全，降低了博客的外部访问。<br><a id="more"></a><br>以下利用Cloudflare，其原理是访问的时候是https，用户在访问的时候将http转为https,而在呈现页面的时候又可以http的方式进行展示，成功拿到github的博客地址；<br>一、在Cloudflare配置<br>1.在官网注册：<a href="https://www.cloudflare.com/" target="_blank" rel="external">https://www.cloudflare.com/</a><br>2.具体过程直接看这里的官网视频：<br>网速的原因也可直接访问：<a href="https://www.cloudflare.com/video/cloudflare-setup.mp4" target="_blank" rel="external">https://www.cloudflare.com/video/cloudflare-setup.mp4</a></p>
 <p>3.在上述的教程中，在你的域名控制台，将DNS服务器改为Cloudflare中显示的另个，会有两个逐一替换即可；</p>
 <p><img src="/blogsslhttps/001.png" alt="img1"></p>
 <p>4.在Cloudflare，Crypto选项下，选择SSL为Full,并将下边的Always use</p>
@@ -313,6 +313,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/12/11/chrome/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          解决ubuntu中Chrome浏览器在外部无法打开及链接无法打开问题
+        
+      </div>
+    </a>
   
   
     <a href="/2017/12/06/ubuntu/" id="article-nav-older" class="article-nav-link-wrap">
@@ -487,7 +496,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,23 +504,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hello</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用命令</a>
+                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +540,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hello</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">软件 系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础部署</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
               </li>
             
             <div class="clearfix"></div>
