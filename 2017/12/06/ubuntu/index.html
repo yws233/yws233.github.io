@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://yws.fun/2017/12/06/ubuntu/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="一、解决Android studio 固定启动器问题">
-<meta property="og:updated_time" content="2017-12-26T06:00:35.676Z">
+<meta property="og:updated_time" content="2017-12-26T07:29:23.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu系统软件安装及问题记录">
 <meta name="twitter:description" content="一、解决Android studio 固定启动器问题">
@@ -203,6 +203,19 @@
 <p>它会跳出一个对话框，你选择yes就好了<br>然后安装mysql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mysql-client mysql-server</div></pre></td></tr></table></figure></p>
 <p>安装的时候会提示要设置root密码，如果你没有在卸载的时候去清理残留数据是不会提示你去设置root密码的<br>检查mysql是不是在运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service mysql status</div></pre></td></tr></table></figure></p>
 <p>一般安装完成之后都是会自动运行的。<br>如果没有运行你可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo service mysql start</div></pre></td></tr></table></figure></p>
+<p>四、使用scp上传文件及下载文件至阿里云服务器<br>1.上传<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r 文件名 主机名@主机ip:/路径</div></pre></td></tr></table></figure></p>
+<p>2.下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r 主机名@主机ip1:/要存放的路径</div></pre></td></tr></table></figure></p>
+<p>五、如何修改mysql字符编码及开启远程连接<br>1.修改字符编码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vim /etc/mysql/conf.d/mysql.cnf</div><div class="line"></div><div class="line">&gt;[mysql]</div><div class="line">default-character-set=utf8</div><div class="line">[client]</div><div class="line">default-character-set=utf8</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</div><div class="line">[mysqld]</div><div class="line">init-connect=&apos;SET NAMES utf8&apos;</div><div class="line">character-set-server = utf8</div><div class="line"></div><div class="line">验证：mysql&gt; show variables like &apos;%char%&apos;;</div></pre></td></tr></table></figure>
+<p>2.开启远程访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.注释掉：#bind-address = 127.0.0.1 或者改为0.0.0.0</div><div class="line">2.进入MySQL,use mysql;</div><div class="line">grant all on *.* to 登录名@&apos;%&apos; identified by &apos;密码&apos;;</div><div class="line">刷新flush privileges;</div><div class="line">重启：sudo /etc/init.d/mysql restart</div></pre></td></tr></table></figure></p>
+<p>六、安装jdk<br>1.将jdk解压后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/profile</div></pre></td></tr></table></figure></p>
+<p>2.末尾加入 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=/jdk解压目录</div><div class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre</div><div class="line">export CLASSPATH=.:%&#123;JAVA_HOME&#125;/lib:%&#123;JRE_HOME&#125;/lib</div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/bin:$PATH</div></pre></td></tr></table></figure>
+<p>3.更新资源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure></p>
+<p>4.测试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure></p>
+<p>六、tomcat<br>1.进入bin目录<br>2.修改catalina.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim catalina.sh</div></pre></td></tr></table></figure></p>
+<p>3.在vim中找到这行# OS specific support. $var <em>must</em> be set to either true or false.</p>
+<p>加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CATALINA_HOME=tomcat目录</div><div class="line"></div><div class="line">JAVA_HOME=jdk目录</div></pre></td></tr></table></figure></p>
 
       
 
@@ -542,15 +555,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kuaib</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">常用命令</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
               </li>
              
               <li class="article-tag-list-item">
