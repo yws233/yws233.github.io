@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>八大基础排序算法(Java语言实现) | yws博客</title>
+  <title>Java八大基础排序算法 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1. 简单插入排序">
 <meta name="keywords" content="排序 逐渐优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八大基础排序算法(Java语言实现)">
+<meta property="og:title" content="Java八大基础排序算法">
 <meta property="og:url" content="https://yws.fun/2017/11/22/sort/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="1. 简单插入排序">
-<meta property="og:updated_time" content="2018-01-07T11:08:48.988Z">
+<meta property="og:updated_time" content="2018-01-07T16:01:29.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八大基础排序算法(Java语言实现)">
+<meta name="twitter:title" content="Java八大基础排序算法">
 <meta name="twitter:description" content="1. 简单插入排序">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
@@ -173,7 +173,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      八大基础排序算法(Java语言实现)
+      Java八大基础排序算法
     </h1>
   
 
@@ -187,14 +187,255 @@
     <div class="article-entry" itemprop="articleBody">
       
         <script src="/assets/js/APlayer.min.js"> </script><h3 id="1-简单插入排序"><a href="#1-简单插入排序" class="headerlink" title="1. 简单插入排序"></a>1. 简单插入排序</h3><a id="more"></a>
-<p><del>参考</del>:<a href="https://itimetraveler.github.io/2017/07/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8Ejava%E5%AE%9E%E7%8E%B0/" title="link" target="_blank" rel="external">link</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">	/*</div><div class="line">	简单插入排序</div><div class="line"> 	*/</div><div class="line">public class InsertSort&#123;</div><div class="line"></div><div class="line">	//主方法</div><div class="line">	public static void insertSort(int[] arrs)&#123;</div><div class="line">		int length = arrs.length; //数组长度</div><div class="line">		int insertNum; //要插入的数</div><div class="line">		for (int i = 1;i &lt; length; i++) &#123; //插入的次数</div><div class="line">			insertNum = arrs[i]; //要插入的数</div><div class="line">			int j = i - 1; //已经排好序列元素的个数</div><div class="line">			while (j &gt;= 0 &amp;&amp; arrs[j] &gt; insertNum) &#123; //序列从后向前循环，将大于insertNum的数向后移动一格</div><div class="line">				arrs[j + 1] = arrs[j]; //元素移动一格</div><div class="line">				j--;</div><div class="line">			&#125;</div><div class="line">			arrs[j + 1] = insertNum; //插入元素</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;1,3,0,9,0,4,7,10,23,13&#125;;</div><div class="line">		insertSort(nums);</div><div class="line">		for (int num : nums ) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="2-希尔排序"><a href="#2-希尔排序" class="headerlink" title="2.希尔排序"></a>2.希尔排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	希尔排序</div><div class="line">*/</div><div class="line">public class ShellSort&#123;</div><div class="line"></div><div class="line">	//主方法</div><div class="line">	public static void shellSort(int[] arrs)&#123;</div><div class="line">		int len = arrs.length; //增量</div><div class="line">		int temp = 0;</div><div class="line">		for (int skip = len / 2; skip &gt; 0; skip /= 2 ) &#123; //取中间值分组</div><div class="line">			for (int i = skip; i &lt; arrs.length; i++ ) &#123; //从中间值开始</div><div class="line">				temp = arrs[i]; //将中间值赋予</div><div class="line">				int j = i - skip; // 从0开始</div><div class="line">				while (j &gt;= 0 &amp;&amp; temp &lt; arrs[j]) &#123; </div><div class="line">					arrs[j + skip] = arrs[j]; // 如果大于中间值，则放在中间值的后边</div><div class="line">					j = j - skip; //比中间值小则退出循环</div><div class="line">				&#125;</div><div class="line">				arrs[j + skip] = temp; //如果小于中间值，则放在中间值的前边</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	//test</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;1,3,6,9,2,4,8&#125;;</div><div class="line">		shellSort(nums);</div><div class="line">		for (int num : nums) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="3-冒泡排序"><a href="#3-冒泡排序" class="headerlink" title="3.冒泡排序"></a>3.冒泡排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	冒泡排序</div><div class="line">*/</div><div class="line"></div><div class="line">public class BubbleSort&#123;</div><div class="line"></div><div class="line">	// 主方法 </div><div class="line">	public static void bubbleSort(int[] arrs)&#123;</div><div class="line">		int temp = 0;</div><div class="line">		for (int i = 0; i &lt; arrs.length - 1; i++) &#123;</div><div class="line">			for (int j = 0; j &lt; arrs.length - 1 - i; j++) &#123;</div><div class="line">				if (arrs[j] &gt; arrs[j + 1]) &#123;</div><div class="line">					temp = arrs[j];</div><div class="line">					arrs[j] = arrs[j + 1];</div><div class="line">					arrs[j + 1] = temp;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line"></div><div class="line">	// test</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;0,9,6,3,4,2,7,8,8,10&#125;;</div><div class="line">		bubbleSort(nums);</div><div class="line">		for (int num : nums) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="4-堆排序"><a href="#4-堆排序" class="headerlink" title="4.堆排序"></a>4.堆排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	堆排序</div><div class="line">*/</div><div class="line"></div><div class="line">public class HeapSort&#123;</div><div class="line"></div><div class="line">	public static void heapSort(int[] arrs)&#123;</div><div class="line">		for (int i = arrs.length - 1; i &gt;0; i--) &#123;</div><div class="line">			buildMaxHeap(arrs, i);</div><div class="line">			swap(arrs, 0, i);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	private static void swap(int[] arrs,int i, int j)&#123;</div><div class="line">		int temp = arrs[i];</div><div class="line">		arrs[i] = arrs[j];</div><div class="line">		arrs[j] = temp;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	private static void buildMaxHeap(int[] arrs,int end)&#123;</div><div class="line">		for (int i = (end - 1) / 2; i &gt;= 0; i-- ) &#123;</div><div class="line">			int k = i;</div><div class="line">			while (2 * k + 1 &lt;= end) &#123;</div><div class="line">				int child = 2 * k + 1;</div><div class="line">				if (child + 1 &lt;= end &amp;&amp; arrs[child] &lt; arrs[child + 1]) &#123;</div><div class="line">					child++;</div><div class="line">				&#125;</div><div class="line">				if (arrs[child] &gt; arrs[k]) &#123;</div><div class="line">					swap(arrs, k, child);</div><div class="line">					k = child;</div><div class="line">				&#125; else &#123;</div><div class="line">					break;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;0,9,6,3,4,2,7,8,8,10&#125;;</div><div class="line">		heapSort(nums);</div><div class="line">		for (int num : nums) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5.快速排序"></a>5.快速排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	快速排序</div><div class="line">*/</div><div class="line"></div><div class="line">public class QuickSort&#123;</div><div class="line"></div><div class="line">	//主方法</div><div class="line">	public static void quickSort(int[] arrs)&#123;</div><div class="line"></div><div class="line">		//调用方法</div><div class="line">		quickSort(arrs,0,arrs.length - 1);</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public static void quickSort(int[] arrs,int left,int right)&#123;</div><div class="line">		int middle = 0;</div><div class="line">		if (left &lt; right) &#123;</div><div class="line">			middle = partition(arrs,left,right);</div><div class="line">			quickSort(arrs, left, middle - 1);</div><div class="line">			quickSort(arrs, middle + 1,right);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	//分区</div><div class="line">	public static int partition(int[] arrs,int left,int right)&#123;</div><div class="line">		int pivot = arrs[left]; //选取左边元素为基准</div><div class="line">		while(left &lt; right)&#123;</div><div class="line">			while(left &lt; right &amp;&amp; arrs[right] &gt;= pivot)&#123;</div><div class="line">				right--;</div><div class="line">			&#125;</div><div class="line">			if (left &lt; right) &#123;</div><div class="line">				arrs[left++] = arrs[right];</div><div class="line">			&#125;</div><div class="line">			while(left &lt; right &amp;&amp; arrs[left] &lt;= pivot)&#123;</div><div class="line">				left++;</div><div class="line">			&#125;</div><div class="line">			if (left &lt; right) &#123;</div><div class="line">				arrs[right--] = arrs[left];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		arrs[left] = pivot;</div><div class="line">		return left;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// test</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;1,45,32,18,32,12,10,21,15,10&#125;;</div><div class="line">		quickSort(nums);</div><div class="line">		for (int num : nums) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="6-选择排序"><a href="#6-选择排序" class="headerlink" title="6.选择排序"></a>6.选择排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	简单选择排序</div><div class="line">*/</div><div class="line"></div><div class="line">public class SelectionSort&#123;</div><div class="line"></div><div class="line">	//主方法</div><div class="line">	public static void selectionSort(int[] arrs)&#123;</div><div class="line">		int temp = 0;</div><div class="line">		int position = 0;</div><div class="line">		for (int i = 0; i &lt; arrs.length; i++ ) &#123;</div><div class="line">			position = i;</div><div class="line">			temp = arrs[i];</div><div class="line">			for (int j = i + 1;j &lt; arrs.length;j++) &#123;</div><div class="line">				if (temp &gt; arrs[j]) &#123;</div><div class="line">					temp = arrs[j];</div><div class="line">					position = j;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			arrs[position] = arrs[i];</div><div class="line">			arrs[i] = temp;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	// test</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;0,23,43,12,16,21,33&#125;;</div><div class="line">		selectionSort(nums);</div><div class="line">		for (int num : nums) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="7-归并排序"><a href="#7-归并排序" class="headerlink" title="7.归并排序"></a>7.归并排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	归并排序</div><div class="line">*/</div><div class="line">public class MergeSort&#123;</div><div class="line"></div><div class="line">	//主方法</div><div class="line">	public static void mergeSort(int[] arrs)&#123;</div><div class="line"></div><div class="line">		//调用方法</div><div class="line">		mergeSort(arrs,0,arrs.length - 1);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public static void mergeSort(int[] arrs,int left,int right)&#123;</div><div class="line">		if (left &lt; right) &#123;</div><div class="line">			int center = (left + right) / 2; //取得中间值</div><div class="line">			mergeSort(arrs, left, center);</div><div class="line">			mergeSort(arrs, center + 1, right);</div><div class="line">			mergeSort(arrs, left, center, right);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public static void mergeSort(int[] arrs,int left,int center,int right)&#123;</div><div class="line">		int[] tempArr = new int[arrs.length]; //存放分组排序后的数组</div><div class="line">		int mid = center + 1;</div><div class="line">		int temp = left;</div><div class="line">		int third = left;</div><div class="line">		while (left &lt;= center &amp;&amp; mid &lt;= right) &#123;</div><div class="line">			if (arrs[left] &lt;= arrs[mid]) &#123;</div><div class="line">				tempArr[third++] = arrs[left++];</div><div class="line">			&#125; else &#123;</div><div class="line">				tempArr[third++] = arrs[mid++];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		while (left &lt;= center) &#123;</div><div class="line">			tempArr[third++] = arrs[left++];</div><div class="line">		&#125;</div><div class="line">		while(mid &lt;= right)&#123;</div><div class="line">			tempArr[third++] = arrs[mid++];</div><div class="line">		&#125;</div><div class="line">		while (temp &lt;= right) &#123;</div><div class="line">			arrs[temp] = tempArr[temp++];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	// test</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;1,6,3,12,18,13,19,21,14&#125;;</div><div class="line">		mergeSort(nums);</div><div class="line">		for (int num : nums) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="8-基数排序"><a href="#8-基数排序" class="headerlink" title="8. 基数排序"></a>8. 基数排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">	基数排序</div><div class="line">*/</div><div class="line">public class RadixSort&#123;</div><div class="line"></div><div class="line">	//主方法</div><div class="line">	public static void radixSort(int[] arrs)&#123;</div><div class="line"></div><div class="line">		//求数组中的最大元素</div><div class="line">		int max = arrs[0];</div><div class="line">		for (int i = 0; i &lt; arrs.length; i++ ) &#123;</div><div class="line">			if (arrs[i] &gt; max) &#123;</div><div class="line">				max = arrs[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		//判断最大的元素有几位，确定要循环多少次</div><div class="line">		int time = 0;</div><div class="line">		while (max &gt; 0) &#123;</div><div class="line">			max /= 10;</div><div class="line">			time++;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		int k = 0;</div><div class="line">		int m = 0;</div><div class="line">		int n = 1;</div><div class="line">		int[][] tempArr = new int[10][arrs.length];  //存放每次排序的元素</div><div class="line">		int[] order = new int[10]; //记录每个位置上的元素个数</div><div class="line">		while (m &lt; time) &#123;</div><div class="line">			for (int i = 0; i &lt; arrs.length;i++) &#123;</div><div class="line">				int sd = (arrs[i] / n) % 10;</div><div class="line">				tempArr[sd][order[sd]] = arrs[i];</div><div class="line">				order[sd]++;</div><div class="line">			&#125;</div><div class="line">			for (int i = 0; i &lt; 10; i++ ) &#123;</div><div class="line">				for (int j = 0; order[i] != 0 &amp;&amp; j &lt; order[i]; j++) &#123;</div><div class="line">					arrs[k++] = tempArr[i][j];</div><div class="line">				&#125;</div><div class="line">				order[i] = 0;</div><div class="line">			&#125;</div><div class="line">			n += 10;</div><div class="line">			k = 0;</div><div class="line">			m++;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		int[] nums = &#123;1,3,23,23,68,9,4,8&#125;;</div><div class="line">		radixSort(nums);</div><div class="line">		for (int num : nums) &#123;</div><div class="line">			System.out.print(num + &quot; &quot;);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><del>参考</del>:<a href="https://itimetraveler.github.io/2017/07/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93%E4%B8%8Ejava%E5%AE%9E%E7%8E%B0/" title="link" target="_blank" rel="external">link</a><br>```</p>
+<p>package test;</p>
+<p>import java.util.Arrays;<br>import java.util.Random;</p>
+<p>/**</p>
+<ul>
+<li>八大基础排序</li>
+<li>@author ws<br>*/</li>
+</ul>
+<p>public class BasicSort {<br>    public static void insertionSort(int[] arr){<br>        for( int i=0; i<arr.length-1; i++="" )="" {="" for(="" int="" j="i+1;">0; j– ) {<br>                if( arr[j-1] &lt;= arr[j] )<br>                    break;<br>                int temp = arr[j];      //交换操作<br>                arr[j] = arr[j-1];<br>                arr[j-1] = temp;<br>                System.out.println(“Sorting:  “ + Arrays.toString(arr));<br>            }<br>        }<br>    }</arr.length-1;></p>
+<pre><code>/**
+ * 希尔排序
+ * */
+
+public static void shellSort(int[] arr){
+    int gap = arr.length / 2;
+    for (; gap &gt; 0; gap /= 2) {      //不断缩小gap，直到1为止
+        for (int j = 0; (j+gap) &lt; arr.length; j++){     //使用当前gap进行组内插入排序
+            for(int k = 0; (k+gap)&lt; arr.length; k += gap){
+                if(arr[k] &gt; arr[k+gap]) {
+                    int temp = arr[k+gap];      //交换操作
+                    arr[k+gap] = arr[k];
+                    arr[k] = temp;
+                    System.out.println(&quot;Sorting: &quot; + Arrays.toString(arr));
+                }
+            }
+        }
+    }
+}
+
+/*
+* 选择排序
+* */
+public static void selectionSort(int[] arr) {
+    for (int i = 0; i &lt; arr.length - 1; i++) {
+        int min = i;
+        for (int j = i + 1; j &lt; arr.length; j++) {    //选出之后待排序中值最小的位置
+            if (arr[j] &lt; arr[min]) {
+                min = j;
+            }
+        }
+        if (min != i) {
+            int temp = arr[min];      //交换操作
+            arr[min] = arr[i];
+            arr[i] = temp;
+            System.out.println(&quot;Sorting:  &quot; + Arrays.toString(arr));
+        }
+    }
+}
+
+/*
+*
+* 堆排序
+* */
+public static void heapSort(int[] arr){
+    for(int i = arr.length; i &gt; 0; i--){
+        max_heapify(arr, i);
+        int temp = arr[0];      //堆顶元素(第一个元素)与Kn交换
+        arr[0] = arr[i-1];
+        arr[i-1] = temp;
+    }
+}
+private static void max_heapify(int[] arr, int limit){
+    if(arr.length &lt;= 0 || arr.length &lt; limit) return;
+    int parentIdx = limit / 2;
+    for(; parentIdx &gt;= 0; parentIdx--){
+        if(parentIdx * 2 &gt;= limit){
+            continue;
+        }
+        int left = parentIdx * 2;       //左子节点位置
+        int right = (left + 1) &gt;= limit ? left : (left + 1);    //右子节点位置，如果没有右节点，默认为左节点位置
+        int maxChildId = arr[left] &gt;= arr[right] ? left : right;
+        if(arr[maxChildId] &gt; arr[parentIdx]){   //交换父节点与左右子节点中的最大值
+            int temp = arr[parentIdx];
+            arr[parentIdx] = arr[maxChildId];
+            arr[maxChildId] = temp;
+        }
+    }
+    System.out.println(&quot;Max_Heapify: &quot; + Arrays.toString(arr));
+}
+
+/*
+* 冒泡排序
+* */
+public static void bubbleSort(int[] arr){
+    for (int i = arr.length; i &gt; 0; i--) {      //外层循环移动游标
+        for(int j = 0; j &lt; i &amp;&amp; (j+1) &lt; i; j++){    //内层循环遍历游标及之后(或之前)的元素
+            if(arr[j] &gt; arr[j+1]){
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                System.out.println(&quot;Sorting: &quot; + Arrays.toString(arr));
+            }
+        }
+    }
+}
+
+/*
+*
+* 快速排序
+* */
+public static void quickSort(int[] arr, int low, int high){
+    if(arr.length &lt;= 0) return;
+    if(low &gt;= high) return;
+    int left = low;
+    int right = high;
+    int temp = arr[left];   //挖坑1：保存基准的值
+    while (left &lt; right){
+        while(left &lt; right &amp;&amp; arr[right] &gt;= temp){  //坑2：从后向前找到比基准小的元素，插入到基准位置坑1中
+            right--;
+        }
+        arr[left] = arr[right];
+        while(left &lt; right &amp;&amp; arr[left] &lt;= temp){   //坑3：从前往后找到比基准大的元素，放到刚才挖的坑2中
+            left++;
+        }
+        arr[right] = arr[left];
+    }
+    arr[left] = temp;   //基准值填补到坑3中，准备分治递归快排
+    System.out.println(&quot;Sorting: &quot; + Arrays.toString(arr));
+    quickSort(arr, low, left-1);
+    quickSort(arr, left+1, high);
+}
+
+/*
+* 归并排序
+* */
+public static int[] mergingSort(int[] arr){
+    if(arr.length &lt;= 1) return arr;
+    int num = arr.length &gt;&gt; 1;
+    int[] leftArr = Arrays.copyOfRange(arr, 0, num);
+    int[] rightArr = Arrays.copyOfRange(arr, num, arr.length);
+    System.out.println(&quot;split two array: &quot; + Arrays.toString(leftArr) + &quot; And &quot; + Arrays.toString(rightArr));
+    return mergeTwoArray(mergingSort(leftArr), mergingSort(rightArr));      //不断拆分为最小单元，再排序合并
+}
+private static int[] mergeTwoArray(int[] arr1, int[] arr2) {
+    int i = 0, j = 0, k = 0;
+    int[] result = new int[arr1.length + arr2.length];  //申请额外的空间存储合并之后的数组
+    while (i &lt; arr1.length &amp;&amp; j &lt; arr2.length) {      //选取两个序列中的较小值放入新数组
+        if (arr1[i] &lt;= arr2[j]) {
+            result[k++] = arr1[i++];
+        } else {
+            result[k++] = arr2[j++];
+        }
+    }
+    while (i &lt; arr1.length) {     //序列1中多余的元素移入新数组
+        result[k++] = arr1[i++];
+    }
+    while (j &lt; arr2.length) {     //序列2中多余的元素移入新数组
+        result[k++] = arr2[j++];
+    }
+    System.out.println(&quot;Merging: &quot; + Arrays.toString(result));
+    return result;
+}
+
+/*
+* 基数排序
+* */
+public static void radixSort(int[] arr){
+    if(arr.length &lt;= 1) return;
+    //取得数组中的最大数，并取得位数
+    int max = 0;
+    for(int i = 0; i &lt; arr.length; i++){
+        if(max &lt; arr[i]){
+            max = arr[i];
+        }
+    }
+    int maxDigit = 1;
+    while(max / 10 &gt; 0){
+        maxDigit++;
+        max = max / 10;
+    }
+    System.out.println(&quot;maxDigit: &quot; + maxDigit);
+    //申请一个桶空间
+    int[][] buckets = new int[10][arr.length];
+    int base = 10;
+    //从低位到高位，对每一位遍历，将所有元素分配到桶中
+    for(int i = 0; i &lt; maxDigit; i++){
+        int[] bktLen = new int[10];        //存储各个桶中存储元素的数量
+
+        //分配：将所有元素分配到桶中
+        for(int j = 0; j &lt; arr.length; j++){
+            int whichBucket = (arr[j] % base) / (base / 10);
+            buckets[whichBucket][bktLen[whichBucket]] = arr[j];
+            bktLen[whichBucket]++;
+        }
+        //收集：将不同桶里数据挨个捞出来,为下一轮高位排序做准备,由于靠近桶底的元素排名靠前,因此从桶底先捞
+        int k = 0;
+        for(int b = 0; b &lt; buckets.length; b++){
+            for(int p = 0; p &lt; bktLen[b]; p++){
+                arr[k++] = buckets[b][p];
+            }
+        }
+        System.out.println(&quot;Sorting: &quot; + Arrays.toString(arr));
+        base *= 10;
+    }
+}
+
+public static void main(String[] args) {
+    int count = 0;
+    int[] nums = new int[10000];
+    for (int i = 0; i &lt; nums.length; i++){
+        Random random = new Random();
+        int number = random.nextInt(1000);
+        nums[i] = number;
+        System.out.println(nums[i]);
+        count++;
+    }
+ /*   long open = System.currentTimeMillis();
+    System.out.println(&quot;插入排序&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+    insertionSort(nums);
+    long close = System.currentTimeMillis();
+    System.out.println((close - open)/1000 + &quot;s&quot;);*/
+
+    /*long open = System.currentTimeMillis();
+    System.out.println(&quot;希尔排序&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+    shellSort(nums);
+    long close = System.currentTimeMillis();
+    System.out.println((close - open)/1000 + &quot;s&quot;);
+    System.out.println(count + &quot;个数据&quot;);*/
+   /* long open = System.currentTimeMillis();
+    System.out.println(&quot;选择排序&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+    selectionSort(nums);
+    long close = System.currentTimeMillis();
+    System.out.println((close - open)/1000 + &quot;s&quot;);*/
+</code></pre><p>/<em><br>        long open = System.currentTimeMillis();<br>        System.out.println(“堆排序&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;”);<br>        heapSort(nums);<br>        long close = System.currentTimeMillis();<br>        System.out.println((close - open)/1000 + “s”);<br>        System.out.println(count + “次”);</em>/</p>
+<pre><code>  /*  long open = System.currentTimeMillis();
+    System.out.println(&quot;冒泡排序&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+    bubbleSort(nums);
+    long close = System.currentTimeMillis();
+    System.out.println((close - open)/1000 + &quot;s&quot;);
+    System.out.println(count + &quot;次&quot;);*/
+
+ /*   long open = System.currentTimeMillis();
+    System.out.println(&quot;快速排序&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+    quickSort(nums,0, nums.length-1);
+    long close = System.currentTimeMillis();
+    System.out.println((close - open)/1000 + &quot;s&quot;);
+    System.out.println(count + &quot;个数据&quot;);*/
+
+
+
+    long open = System.currentTimeMillis();
+    System.out.println(&quot;基数排序&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot;);
+    mergingSort(nums);
+    long close = System.currentTimeMillis();
+    System.out.println((close - open)/1000 + &quot;s&quot;);
+    System.out.println(count + &quot;个数据&quot;);
+
+}
+</code></pre><p>}</p>
 
       
 
@@ -498,11 +739,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">easybuy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">easybuy</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -526,11 +767,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,11 +819,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用分析</a>
+                <a href="javascript:void(0)" class="js-tag color3">twwiter</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">twwiter</a>
+                <a href="javascript:void(0)" class="js-tag color5">常用分析</a>
               </li>
              
               <li class="article-tag-list-item">
