@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://yws.fun">
-  <title>Spring中使用JNDI方式配置数据库在tomcat中配置 | yws博客</title>
+  <title>Spring中使用JNDI方式连接数据库在tomcat中配置 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="进入tomcat安装目录，conf/context下，在文件最后加入">
-<meta name="keywords" content="learning">
+<meta name="keywords" content="tomcat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring中使用JNDI方式配置数据库在tomcat中配置">
+<meta property="og:title" content="Spring中使用JNDI方式连接数据库在tomcat中配置">
 <meta property="og:url" content="https://yws.fun/2018/01/08/tomcat/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="进入tomcat安装目录，conf/context下，在文件最后加入">
-<meta property="og:updated_time" content="2018-01-08T01:42:02.312Z">
+<meta property="og:updated_time" content="2018-01-08T01:48:54.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring中使用JNDI方式配置数据库在tomcat中配置">
+<meta name="twitter:title" content="Spring中使用JNDI方式连接数据库在tomcat中配置">
 <meta name="twitter:description" content="进入tomcat安装目录，conf/context下，在文件最后加入">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
@@ -173,7 +173,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Spring中使用JNDI方式配置数据库在tomcat中配置
+      Spring中使用JNDI方式连接数据库在tomcat中配置
     </h1>
   
 
@@ -187,7 +187,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <script src="/assets/js/APlayer.min.js"> </script><p>进入tomcat安装目录，conf/context下，在文件最后加入<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Resource name=&quot;jndi/smbms&quot; auth=&quot;Container&quot; type=&quot;javax.sql.DataSource&quot;</div><div class="line">driverClassName=&quot;com.mysql.jdbc.Driver&quot; url = &quot;jdbc:mysql://127.0.0.1:3306/smbms?useUnicode=true&amp;amp;characterEncoding=utf-8&quot;</div><div class="line">username=&quot;root&quot; password=&quot;yws&quot;/&gt;</div></pre></td></tr></table></figure>
+<p>1.在tomcat中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Resource name=&quot;可以任意命名，如jndi/sm&quot; auth=&quot;Container&quot; type=&quot;javax.sql.DataSource&quot;</div><div class="line">driverClassName=&quot;com.mysql.jdbc.Driver&quot; url = &quot;jdbc:mysql://127.0.0.1:3306/数据库名称?useUnicode=true&amp;amp;characterEncoding=utf-8&quot;</div><div class="line">username=&quot;root&quot; password=&quot;数据库密码&quot;/&gt;</div></pre></td></tr></table></figure>
+<p>2.在Spring中配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=&quot;dataSource&quot; class=&quot;org.springframework.jndi.JndiObjectFactoryBean&quot;&gt;</div><div class="line">        &lt;property name=&quot;tomcat配置的jndi名称，如jndi/sm&quot;&gt;</div><div class="line">            &lt;value&gt;java:comp/env/jndi/sm&lt;/value&gt;</div><div class="line">        &lt;/property&gt;</div><div class="line">&lt;/bean&gt;</div></pre></td></tr></table></figure></p>
 
       
 
@@ -222,7 +224,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -468,6 +492,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">issue</a>
               </li>
              
@@ -476,15 +504,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hello</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础部署</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,6 +525,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jvm 虚拟机</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">kuaib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,10 +544,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计划书</a>
               </li>
              
@@ -521,6 +553,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序 逐渐优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hello</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">kuaib</a>
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
