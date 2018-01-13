@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://yws.fun/2017/12/29/database/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="一、数据库java.sql.SQLException: Value ‘0000-00-00’ can not be represented as java.sql.Date 异常1在数据库资源配置文件添加：jdbc:mysql://yourserver:3306/yourdatabase?``zeroDateTimeBehavior=convertToNull``">
-<meta property="og:updated_time" content="2018-01-03T07:34:20.191Z">
+<meta property="og:updated_time" content="2018-01-13T07:39:51.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库填坑记录">
 <meta name="twitter:description" content="一、数据库java.sql.SQLException: Value ‘0000-00-00’ can not be represented as java.sql.Date 异常1在数据库资源配置文件添加：jdbc:mysql://yourserver:3306/yourdatabase?``zeroDateTimeBehavior=convertToNull``">
@@ -188,6 +188,7 @@
       
         <script src="/assets/js/APlayer.min.js"> </script><p>一、数据库java.sql.SQLException: Value ‘0000-00-00’ can not be represented as java.sql.Date 异常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">在数据库资源配置文件添加：jdbc:mysql://yourserver:3306/yourdatabase?``zeroDateTimeBehavior=convertToNull``</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
+<p>1.解决：java.sql.SQLException: Access denied for user ‘’@’localhost’ (using password: YES)<br>出现这种情况的原因主要有两种：<br>一种是因为database.properties文件密码啥的配置有误<br><del>另一种就特别坑爹，谨记。就是在spring配置文件有误，除了保证代码无误外,一定要注意spring<beans>头部的各类配置一定要保证版本一致，否则也会报类似的错误。</beans></del></p>
 
       
 
@@ -491,6 +492,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">easybuy</a>
               </li>
              
@@ -499,15 +504,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
+                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">issue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,11 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -575,15 +576,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">twwiter</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">软件 系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
