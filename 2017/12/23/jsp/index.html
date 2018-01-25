@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://yws.fun/2017/12/23/jsp/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="一.JSP编码问题post:  request.setCharacterEncoding(“utf-8”);  get:  String userName = request.getParameter(“username”);userName = new String(userName.getBytes(“ISO-8859-1”),”UTF-8”);">
-<meta property="og:updated_time" content="2017-12-23T06:58:00.126Z">
+<meta property="og:updated_time" content="2018-01-25T15:12:50.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决java web开发中各类中文编码问题">
 <meta name="twitter:description" content="一.JSP编码问题post:  request.setCharacterEncoding(“utf-8”);  get:  String userName = request.getParameter(“username”);userName = new String(userName.getBytes(“ISO-8859-1”),”UTF-8”);">
@@ -192,8 +192,14 @@
 </blockquote>
 <p>get:</p>
 <blockquote>
-<p>String userName = request.getParameter(“username”);<br>userName = new String(userName.getBytes(“ISO-8859-1”),”UTF-8”);<br><a id="more"></a><br>或者直接该服务器编码如tomcat：<br>在/conf/server.xml中在<connectorb port="8080" .....加入uriencoding="UTF-8"></connectorb></p>
+<p>String userName = request.getParameter(“username”);<br>userName = new String(userName.getBytes(“ISO-8859-1”),”UTF-8”);<br><a id="more"></a><br>或者直接该服务器编码如tomcat：<br>在/conf/server.xml中在<connectorb port="8080" .....加入uriencoding="UTF-8"><br>二、解决SpringMVC,JSON数据传递过程中编码问题</connectorb></p>
 </blockquote>
+<p>1.@RequestMapping(value=”/dologin.html”,method=RequestMethod.POST,produces={“appliction/json;charset=UTF-8”})</p>
+<p>2.也可在Spring配置，使用StringHttpMessageConverter消息转换器，设置字符编码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;!--设置字符编码消息转换器,避免页面返回json数据乱码--&gt;</div><div class="line">	&lt;mvc:annotation-driven&gt;</div><div class="line">		&lt;mvc:message-converters&gt;</div><div class="line">			&lt;bean class=&quot;org.springframework.http.converter.StringHttpMessageConverter&quot;&gt;</div><div class="line">				&lt;property name=&quot;supportedMediaTypes&quot;&gt;</div><div class="line">					&lt;list&gt;</div><div class="line">						&lt;value&gt;application/json;charsetUTF-8&lt;/value&gt;</div><div class="line">					&lt;/list&gt;</div><div class="line">				&lt;/property&gt;</div><div class="line">			&lt;/bean&gt;</div><div class="line">		&lt;/mvc:message-converters&gt;</div><div class="line">	&lt;/mvc:annotation-driven&gt;</div></pre></td></tr></table></figure></p>
+<p>三、解决json日期页面返回格式问题<br>1.注解式：<br>@JSONfIELD(format=”yyyy-MM-dd”)<br>public Date birthday; //出生日期</p>
+<p>2.fastjson日期格式配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;bean class=&quot;com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter&quot;&gt;</div><div class="line">    			&lt;property name=&quot;supportedMediaTypes&quot;&gt;</div><div class="line">    				&lt;list&gt;</div><div class="line">    					&lt;value&gt;text/html;charset=UTF-8&lt;/value&gt;</div><div class="line">    					&lt;value&gt;application/json&lt;/value&gt;</div><div class="line">    				&lt;/list&gt;</div><div class="line">    			&lt;/property&gt;</div><div class="line">    			&lt;property name=&quot;features&quot;&gt;</div><div class="line">    				&lt;list&gt;</div><div class="line">    				   &lt;!-- Date的日期转换器 --&gt;</div><div class="line">    					&lt;value&gt;WriteDateUseDateFormat&lt;/value&gt;</div><div class="line">    				&lt;/list&gt;</div><div class="line">    			&lt;/property&gt;</div><div class="line">    		&lt;/bean&gt;</div></pre></td></tr></table></figure>
+<p>3.利用@JSONFiled(format=”yyyy-MM-dd”)可以控制返回的JSON日期格式。</p>
 
       
 
@@ -521,10 +527,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础部署</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
@@ -534,6 +536,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">encoding</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">基础部署</a>
               </li>
              
               <li class="article-tag-list-item">
