@@ -184,12 +184,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>1.JSP上传页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;  </div><div class="line">&lt;form method=&quot;post&quot; action=&quot;$&#123;pageContext.request.contextPath &#125;/fileUpload&quot; enctype=&quot;multipart/form-data&quot;&gt;  </div><div class="line">    选择一个文件:  </div><div class="line">    &lt;input type=&quot;file&quot; name=&quot;uploadFile&quot; /&gt;  </div><div class="line">    &lt;br/&gt;&lt;br/&gt;  </div><div class="line">    &lt;input type=&quot;submit&quot; value=&quot;上传&quot; /&gt;  </div><div class="line">&lt;/form&gt;  </div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
-<p>2.上传处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(&quot;/fileUpload&quot;)  </div><div class="line">   public ModelAndView fileUpload(@RequestParam(&quot;uploadFile&quot;) CommonsMultipartFile file) &#123;  </div><div class="line">       //获取文件名称  </div><div class="line">       String fileName = file.getOriginalFilename();  </div><div class="line">       //保存文件  </div><div class="line">       File tempfile = new File(&quot;E:/zzhtml/&quot;+fileName);  </div><div class="line">       OutputStream os = null;  </div><div class="line">       InputStream is = null;  </div><div class="line">       try &#123;  </div><div class="line">           is = file.getInputStream();  </div><div class="line">           byte[] bs = new byte[1024];    </div><div class="line">           int len;    </div><div class="line">           os = new FileOutputStream(tempfile);    </div><div class="line">           while ((len = is.read(bs)) != -1) &#123;    </div><div class="line">               os.write(bs, 0, len);    </div><div class="line">           &#125;    </div><div class="line">       &#125; catch (IOException e) &#123;  </div><div class="line">           e.printStackTrace();  </div><div class="line">       &#125; finally&#123;          </div><div class="line">           try &#123;  </div><div class="line">               if(os!=null)&#123;  </div><div class="line">                   os.close();  </div><div class="line">               &#125;  </div><div class="line">               if(is!=null)&#123;  </div><div class="line">                   is.close();   </div><div class="line">               &#125;  </div><div class="line">           &#125; catch (IOException e) &#123;  </div><div class="line">               e.printStackTrace();  </div><div class="line">           &#125;        </div><div class="line">       &#125;  </div><div class="line">       ModelAndView mv = new ModelAndView(&quot;uploadSuccess&quot;);  </div><div class="line">       mv.addObject(&quot;fileName&quot;, fileName);  </div><div class="line">       return mv;    </div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
-<p>3.JSP下载页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;  </div><div class="line">上传成功&lt;br&gt;&lt;a href=&quot;$&#123;pageContext.request.contextPath &#125;/fileDown?fileName=$&#123;fileName&#125;&quot;&gt;$&#123;fileName &#125;&lt;/a&gt;  </div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>4.下载处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(&quot;/fileDown&quot;)  </div><div class="line">    public String fileDown(@RequestParam(&quot;fileName&quot;)String fileName,HttpServletResponse response) throws UnsupportedEncodingException&#123;  </div><div class="line">        String path=&quot;E:/zzhtml/&quot;;  </div><div class="line">        String tempFileName = new String(fileName.getBytes(&quot;ISO8859-1&quot;), &quot;UTF-8&quot;);  </div><div class="line">        //1.设置文件ContentType类型，这样设置，会自动判断下载文件类型    </div><div class="line">        response.setContentType(&quot;application/x-msdownload&quot;);    </div><div class="line">        //2.设置文件头：最后一个参数是设置下载文件名(假如我们叫a.pdf)    </div><div class="line">        response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;fileName=&quot;+new String(tempFileName.getBytes(&quot;GBK&quot;),&quot;ISO8859-1&quot;));  //这里的fileName要是ISO8859-1编码  </div><div class="line">        ServletOutputStream out = null;    </div><div class="line">        FileInputStream is = null ;  </div><div class="line">        //通过文件路径获得File对象   </div><div class="line">        File file = new File(path +tempFileName);     </div><div class="line">        try &#123;    </div><div class="line">            is= new FileInputStream(file);    </div><div class="line">            //3.通过response获取ServletOutputStream对象(out)    </div><div class="line">            out = response.getOutputStream();    </div><div class="line">            int b = 0;    </div><div class="line">            byte[] buffer = new byte[1024];    </div><div class="line">            while ((b=is.read(buffer,0,buffer.length))!= -1)&#123;    </div><div class="line">                //4.写到输出流(out)中    </div><div class="line">                out.write(buffer,0,b);    </div><div class="line">            &#125;    </div><div class="line">            out.flush();    </div><div class="line">        &#125; catch (IOException e) &#123;    </div><div class="line">            e.printStackTrace();    </div><div class="line">        &#125;finally&#123;  </div><div class="line">            try &#123;  </div><div class="line">                if(is!=null)&#123;  </div><div class="line">                    is.close();  </div><div class="line">                &#125;  </div><div class="line">                if(out!=null)&#123;  </div><div class="line">                    out.close();  </div><div class="line">                &#125;  </div><div class="line">            &#125; catch (IOException e) &#123;  </div><div class="line">                e.printStackTrace();  </div><div class="line">            &#125;    </div><div class="line">        &#125;  </div><div class="line">        return null;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-
+        <p>1.JSP上传页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;  </div><div class="line">&lt;form method=&quot;post&quot; action=&quot;$&#123;pageContext.request.contextPath &#125;/fileUpload&quot; enctype=&quot;multipart/form-data&quot;&gt;  </div><div class="line">    选择一个文件:  </div><div class="line">    &lt;input type=&quot;file&quot; name=&quot;uploadFile&quot; /&gt;  </div><div class="line">    &lt;br/&gt;&lt;br/&gt;  </div><div class="line">    &lt;input type=&quot;submit&quot; value=&quot;上传&quot; /&gt;  </div><div class="line">&lt;/form&gt;  </div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2018/02/02/springmvc/#more">more >></a>
+        
       
 
       
@@ -689,6 +687,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">issue</a>
               </li>
              
@@ -706,6 +708,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">web</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,6 +739,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序 逐渐优化</a>
               </li>
              
@@ -753,27 +763,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">twwiter</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">软件 系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反射</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">designPattern</a>
               </li>
             
             <div class="clearfix"></div>
