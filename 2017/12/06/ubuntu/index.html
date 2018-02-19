@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://yws.fun/2017/12/06/ubuntu/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="一、解决Android studio 固定启动器问题">
-<meta property="og:updated_time" content="2018-01-02T08:36:16.149Z">
+<meta property="og:updated_time" content="2018-02-19T16:27:53.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu开发中各类系统软件配置及记录">
 <meta name="twitter:description" content="一、解决Android studio 固定启动器问题">
@@ -218,6 +218,10 @@
 <p>七、安装svn服务器及配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1.安装</div><div class="line">sudo apt-get install subversion</div><div class="line"></div><div class="line">2.创建资源路径</div><div class="line">mkdir /你的资源项目储存路径</div></pre></td></tr></table></figure></p>
 <p>3.配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">cd /你的资源项目储存路径</div><div class="line"></div><div class="line">ls -l conf 可以看到有几个配置文件</div><div class="line">![img](/ubuntu/svn.png)</div><div class="line"></div><div class="line">1.修改 authz</div><div class="line">[groups]</div><div class="line">admin= rw  创建用户，权限可读写</div><div class="line"></div><div class="line">2.设置密码</div><div class="line">vim password 打开文件 ,设置admin = 你的密码</div><div class="line"></div><div class="line">3.修改配置文件svnserve.conf</div><div class="line"></div><div class="line">[general]</div><div class="line">#匿名用户不可读</div><div class="line">anon-access = none</div><div class="line">#权限用户可写</div><div class="line">auth-access = write</div><div class="line">#密码文件为passwd</div><div class="line">password-db = passwd</div><div class="line">#权限文件为authz</div><div class="line">authz-db = authz</div></pre></td></tr></table></figure></p>
 <p>4.启动svn服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo svnserve -d -r /你的svn资源路径</div></pre></td></tr></table></figure></p>
+<p>八、清除make安装残余</p>
+<blockquote>
+<p>make distclean</p>
+</blockquote>
 
       
 
@@ -581,19 +585,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">tcp/ip</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">计划书</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">计划书</a>
               </li>
              
               <li class="article-tag-list-item">
