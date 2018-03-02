@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://yws.fun">
   <title>读取pdf转为文本 | yws博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包,&amp;nbsp;&amp;nbsp;http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm">
+  <meta name="description" content="1.可读取pdf文件，也可将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包。&amp;nbsp;&amp;nbsp;http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm">
 <meta name="keywords" content="upload">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读取pdf转为文本">
 <meta property="og:url" content="https://yws.fun/2018/02/05/upload/index.html">
 <meta property="og:site_name" content="yws博客">
-<meta property="og:description" content="1.将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包,&amp;nbsp;&amp;nbsp;http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm">
-<meta property="og:updated_time" content="2018-02-25T11:03:35.826Z">
+<meta property="og:description" content="1.可读取pdf文件，也可将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包。&amp;nbsp;&amp;nbsp;http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm">
+<meta property="og:updated_time" content="2018-03-02T15:33:17.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读取pdf转为文本">
-<meta name="twitter:description" content="1.将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包,&amp;nbsp;&amp;nbsp;http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm">
+<meta name="twitter:description" content="1.可读取pdf文件，也可将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包。&amp;nbsp;&amp;nbsp;http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm">
   
     <link rel="alternative" href="/atom.xml" title="yws博客" type="application/atom+xml">
   
@@ -186,7 +186,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>1.将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包,&nbsp;&nbsp;<a href="http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm" target="_blank" rel="external">http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm</a><br><a id="more"></a></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>1.可读取pdf文件，也可将pdf转为可随意调整格式的文本内容，方便使用，引入textpdf510.jar包。&nbsp;&nbsp;<a href="http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm" target="_blank" rel="external">http://www.java2s.com/Code/Jar/i/Downloaditextpdf510jar.htm</a><br><a id="more"></a></p>
 <p>2.读取pdf文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 获取pdf的内容</div><div class="line"> * @param pdfPath</div><div class="line"> * @return</div><div class="line"> */</div><div class="line">private static String getPdfContent(String pdfPath) &#123;</div><div class="line">	PdfReader reader = null;</div><div class="line">    StringBuffer buff = new StringBuffer();</div><div class="line">    try &#123;</div><div class="line">		reader = new PdfReader(pdfPath);</div><div class="line">		PdfReaderContentParser parser = new PdfReaderContentParser(reader);</div><div class="line">		int num = reader.getNumberOfPages();// 获得页数</div><div class="line">		TextExtractionStrategy strategy;</div><div class="line">		for (int i = 1; i &lt;= num; i++) &#123;</div><div class="line">		   strategy = parser.processContent(i,</div><div class="line">		          new SimpleTextExtractionStrategy());</div><div class="line">		   buff.append(strategy.getResultantText());</div><div class="line">		&#125;</div><div class="line">     &#125; catch (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">     &#125; </div><div class="line">   return buff.toString();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>3.写入其他文本</p>
@@ -510,11 +510,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">记录</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">记录</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,11 +534,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
