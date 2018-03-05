@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://yws.fun/2017/12/29/database/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="一、数据库java.sql.SQLException: Value ‘0000-00-00’ can not be represented as java.sql.Date 异常1在数据库资源配置文件添加：jdbc:mysql://yourserver:3306/yourdatabase?``zeroDateTimeBehavior=convertToNull``">
-<meta property="og:updated_time" content="2018-03-05T11:07:58.966Z">
+<meta property="og:updated_time" content="2018-03-05T17:12:27.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库填坑记录">
 <meta name="twitter:description" content="一、数据库java.sql.SQLException: Value ‘0000-00-00’ can not be represented as java.sql.Date 异常1在数据库资源配置文件添加：jdbc:mysql://yourserver:3306/yourdatabase?``zeroDateTimeBehavior=convertToNull``">
@@ -197,6 +197,10 @@
 <p>解决方案，先执行：<br>SET SQL_SAFE_UPDATES = 0;</p>
 </blockquote>
 <p>如果想要提高数据库安全等级，可以在恢复回原有的设置，执行命令：SET SQL_SAFE_UPDATES = 1;</p>
+<p>五、mysql两表联合更新其中一个字段</p>
+<blockquote>
+<p>/<em>update kuaib_exchange inner join kuaib_user on kuaib_user.userCode = kuaib_exchange.exname set exteacher = #{exteacher}</em>/</p>
+</blockquote>
 
       
 
@@ -504,19 +508,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">kuaib系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">技巧整理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">总结</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
+                <a href="javascript:void(0)" class="js-tag color3">总结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +540,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">kuaib系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">web</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,11 +552,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用命令</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">market_ssm</a>
+                <a href="javascript:void(0)" class="js-tag color4">encoding</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,7 +564,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color1">market_ssm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用命令</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,11 +580,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">反射</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">web</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序 逐渐优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,19 +604,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">常用分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">twwiter</a>
+                <a href="javascript:void(0)" class="js-tag color2">upload</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,7 +620,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">upload</a>
+                <a href="javascript:void(0)" class="js-tag color3">twwiter</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
               </li>
             
             <div class="clearfix"></div>
