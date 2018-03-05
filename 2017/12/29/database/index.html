@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://yws.fun/2017/12/29/database/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="一、数据库java.sql.SQLException: Value ‘0000-00-00’ can not be represented as java.sql.Date 异常1在数据库资源配置文件添加：jdbc:mysql://yourserver:3306/yourdatabase?``zeroDateTimeBehavior=convertToNull``">
-<meta property="og:updated_time" content="2018-01-13T13:14:48.627Z">
+<meta property="og:updated_time" content="2018-03-05T11:07:58.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库填坑记录">
 <meta name="twitter:description" content="一、数据库java.sql.SQLException: Value ‘0000-00-00’ can not be represented as java.sql.Date 异常1在数据库资源配置文件添加：jdbc:mysql://yourserver:3306/yourdatabase?``zeroDateTimeBehavior=convertToNull``">
@@ -191,6 +191,12 @@
 <p>二、解决：java.sql.SQLException: Access denied for user ‘’@’localhost’ (using password: YES)<br>出现这种情况的原因主要有两种：<br>一种是因为database.properties文件密码啥的配置有误<br><del>另一种就特别坑爹，谨记。就是在spring配置文件有误，除了保证代码无误外,一定要注意spring<beans>头部的各类配置一定要保证版本一致，否则也会报类似的错误。</beans></del></p>
 <p>三、解决Workbench闪退问题</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">删除一些配置文件：rm -rf .mysql/workbench/</div></pre></td></tr></table></figure>
+<p>四、mysql报错：使用MySQL执行update的时候报错：Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&gt; SQL Queries and reconnect.</p>
+<p>原因：在使用mysql执行update的时候，如果不是用主键当where语句，会报如下错误，使用主键用于where语句中正常。</p>
+<blockquote>
+<p>解决方案，先执行：<br>SET SQL_SAFE_UPDATES = 0;</p>
+</blockquote>
+<p>如果想要提高数据库安全等级，可以在恢复回原有的设置，执行命令：SET SQL_SAFE_UPDATES = 1;</p>
 
       
 
@@ -498,19 +504,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技巧整理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">kuaib系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
+                <a href="javascript:void(0)" class="js-tag color5">技巧整理</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客 网络安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +528,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hello</a>
+                <a href="javascript:void(0)" class="js-tag color1">issue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">issue</a>
+                <a href="javascript:void(0)" class="js-tag color1">hello</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,6 +564,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tcp/ip</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">outnet</a>
               </li>
              
@@ -566,19 +576,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">tcp/ip</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">计划书</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">反射</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序 逐渐优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">springMVC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,23 +612,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">springMVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">twwiter</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序 逐渐优化</a>
+                <a href="javascript:void(0)" class="js-tag color1">软件 系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">upload</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">软件 系统</a>
               </li>
             
             <div class="clearfix"></div>
