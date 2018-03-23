@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://yws.fun/2018/02/19/art/index.html">
 <meta property="og:site_name" content="yws博客">
 <meta property="og:description" content="记录开发中各种比较好的技术和技巧。">
-<meta property="og:updated_time" content="2018-03-21T14:33:55.635Z">
+<meta property="og:updated_time" content="2018-03-23T00:27:16.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发小技巧">
 <meta name="twitter:description" content="记录开发中各种比较好的技术和技巧。">
@@ -196,8 +196,12 @@
 <blockquote>
 <p>find -type d | grep ‘哈哈’ | xargs rename ‘s/哈哈/ 嘻嘻/‘</p>
 </blockquote>
-<p>5.二叉查找树插入节点<br>&gt;</p>
-<p> public static boolean AddTreeNode2(TreeNode root, int data){<br>        <span style="color:#ff0000;">//树为空</span><br>        if(root==null){<br>            root=new TreeNode(data);<br>            return true;<br>        }<br>        TreeNode treeNode=new TreeNode(data);<br>        TreeNode currNode=root;<br>        while(true){<br>            if(currNode.data&gt;data){<br>                if(currNode.left!=null)<br>                    currNode=currNode.left;<br>                else{<br>                    currNode.left=treeNode;<br>                    return true;<br>                }<br>            }else if(currNode.data<treenode.data){ if(currnode.right!="null)" currnode="currNode.right;" else="" {="" currnode.right="treeNode;" return="" true;="" }="" }else="" false;=""></treenode.data){></p>
+<p>5.二叉查找树插入节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public static boolean AddTreeNode2(TreeNode root, int data)&#123;  </div><div class="line">       &lt;span style=&quot;color:#ff0000;&quot;&gt;//树为空&lt;/span&gt;  </div><div class="line">       if(root==null)&#123;  </div><div class="line">           root=new TreeNode(data);  </div><div class="line">           return true;  </div><div class="line">       &#125;  </div><div class="line">       TreeNode treeNode=new TreeNode(data);  </div><div class="line">       TreeNode currNode=root;  </div><div class="line">       while(true)&#123;  </div><div class="line">           if(currNode.data&gt;data)&#123;  </div><div class="line">               if(currNode.left!=null)  </div><div class="line">                   currNode=currNode.left;  </div><div class="line">               else&#123;  </div><div class="line">                   currNode.left=treeNode;  </div><div class="line">                   return true;  </div><div class="line">               &#125;  </div><div class="line">           &#125;else if(currNode.data&lt;treeNode.data)&#123;  </div><div class="line">               if(currNode.right!=null)  </div><div class="line">                   currNode=currNode.right;  </div><div class="line">               else &#123;  </div><div class="line">                   currNode.right=treeNode;  </div><div class="line">                   return true;  </div><div class="line">               &#125;  </div><div class="line">           &#125;else  </div><div class="line">               return false;  </div><div class="line">       &#125;  </div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>6.查看linux64位还是32位</p>
+<blockquote>
+<p>sudo uname –m</p>
+</blockquote>
 
       
 
@@ -509,11 +513,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技巧整理</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">技巧整理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,11 +549,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">data</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color5">data</a>
               </li>
              
               <li class="article-tag-list-item">
